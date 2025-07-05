@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hmpf3cvbehri"]
+
+[ext_resource type="Script" uid="uid://ne6iawypd805" path="res://EntityTracker.gd" id="1_k48fm"]
+
+[node name="SpaceBoard" type="Node3D"]
+
+[node name="EntityTracker" type="Node" parent="."]
+script = ExtResource("1_k48fm")
+
+[node name="PlayArea" type="Node3D" parent="."]

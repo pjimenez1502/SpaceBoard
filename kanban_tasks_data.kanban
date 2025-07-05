@@ -1,0 +1,56 @@
+{
+	"categories": [
+		{
+			"uuid": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"title": "Task",
+			"color": "3d85f2"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "b595b85c-95ea-455d-8d31-320195797a64",
+			"title": "CONCEPT",
+			"tasks": []
+		},
+		{
+			"uuid": "a458d220-adbc-4e5e-946e-7af87f563398",
+			"title": "STASH",
+			"tasks": []
+		},
+		{
+			"uuid": "04b80cbf-3c26-4d9b-ae98-befe02d6b193",
+			"title": "TODO",
+			"tasks": []
+		},
+		{
+			"uuid": "48221522-2be5-4c66-95bf-9bbe47a81518",
+			"title": "DOING",
+			"tasks": []
+		},
+		{
+			"uuid": "9121d442-df9d-4442-8fe6-a3fd0f0974c5",
+			"title": "DONE",
+			"tasks": []
+		}
+	],
+	"tasks": [],
+	"layout": {
+		"columns": [
+			[
+				"b595b85c-95ea-455d-8d31-320195797a64"
+			],
+			[
+				"a458d220-adbc-4e5e-946e-7af87f563398"
+			],
+			[
+				"04b80cbf-3c26-4d9b-ae98-befe02d6b193"
+			],
+			[
+				"48221522-2be5-4c66-95bf-9bbe47a81518"
+			],
+			[
+				"9121d442-df9d-4442-8fe6-a3fd0f0974c5"
+			]
+		]
+	}
+}
