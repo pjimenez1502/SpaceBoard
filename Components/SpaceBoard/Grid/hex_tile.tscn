@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqfclfb82y348"]
+
+[ext_resource type="PackedScene" uid="uid://x67a7672omy7" path="res://Components/SpaceBoard/Grid/Hexagon.glb" id="1_075r0"]
+[ext_resource type="Script" uid="uid://cft2qgdj5jnup" path="res://Components/SpaceBoard/Grid/Tile.gd" id="1_i0nl4"]
+
+[node name="HexTile" type="Node3D"]
+script = ExtResource("1_i0nl4")
+
+[node name="Hexagon2" parent="." instance=ExtResource("1_075r0")]

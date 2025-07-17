@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c8qnbcpkvrss7"]
+
+[ext_resource type="Shader" uid="uid://do506srfflaq4" path="res://Shader/GridShader.tres" id="1_7uep3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7uep3")

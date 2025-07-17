@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=3 uid="uid://td11omhafxhr"]
+
+[ext_resource type="Shader" uid="uid://capyldf343kln" path="res://Shader/Edge Detection.gdshader" id="1_dhtdo"]
+[ext_resource type="PackedScene" uid="uid://0q66jogyjlyw" path="res://Data/Ships/Capital/Test/Test_Capital_Scene.tscn" id="1_niyqh"]
+[ext_resource type="Script" uid="uid://bdma2kdsv6is4" path="res://Components/FleetScene/debug_data.gd" id="3_320as"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_niyqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_320as"]
+render_priority = 0
+shader = ExtResource("1_dhtdo")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p4ppq"]
+orientation = 0
+
+[sub_resource type="Environment" id="Environment_niyqh"]
+background_mode = 1
+glow_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+
+[node name="FleetScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(576, 324)
+render_target_update_mode = 4
+
+[node name="FleetScene" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/FleetScene"]
+transform = Transform3D(-4.2222e-08, -0.258819, 0.965926, -1.13133e-08, 0.965926, 0.258819, -1, 0, -4.37114e-08, 24.1983, 6, 0.158956)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/FleetScene/Camera3D"]
+mesh = SubResource("PlaneMesh_niyqh")
+surface_material_override/0 = SubResource("ShaderMaterial_320as")
+
+[node name="Background?" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/FleetScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_p4ppq")
+
+[node name="Test Capital" parent="SubViewportContainer/SubViewport/FleetScene" instance=ExtResource("1_niyqh")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/FleetScene"]
+environment = SubResource("Environment_niyqh")
+
+[node name="DebugData" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 298.0
+offset_right = 204.0
+offset_bottom = 574.0
+script = ExtResource("3_320as")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugData"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scrap" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Alloy" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="HSeparator" type="HSeparator" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+
+[node name="Fuel" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Jump Fuel" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="HSeparator2" type="HSeparator" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+
+[node name="Crew" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Pilot" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Civilians" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="HSeparator3" type="HSeparator" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+
+[node name="Food" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Water" type="Label" parent="DebugData/VBoxContainer"]
+layout_mode = 2
+text = "Scrap"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 63.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 15.0
+offset_right = 320.0
+offset_bottom = 38.0
+text = "Icons and values of resources"
+
+[node name="Map button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -22.5
+offset_right = 54.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "MAP"
+
+[node name="Map button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.492
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -25.996
+offset_right = -87.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ship and 
+Inventory"
+
+[node name="Map button3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "Options
+"

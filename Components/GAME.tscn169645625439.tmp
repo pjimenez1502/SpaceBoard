@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dixqvs6v5o4wi"]
+
+[ext_resource type="Script" uid="uid://evmcq0khwt7j" path="res://Components/GAME.gd" id="1_ab3r1"]
+[ext_resource type="PackedScene" uid="uid://doa3ilpvhjo38" path="res://Components/StartMenu.tscn" id="1_m26ab"]
+[ext_resource type="Shader" uid="uid://bku68cqx0bof2" path="res://Shader/ChromaticAberration.gdshader" id="4_28c5x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rqih"]
+shader = ExtResource("4_28c5x")
+shader_parameter/r_displacement = Vector2(3, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-3, 0)
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[node name="GAME" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ab3r1")
+
+[node name="StartMenu" parent="." instance=ExtResource("1_m26ab")]
+layout_mode = 1
+
+[node name="Chromatic Aberration Filter" type="ColorRect" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_8rqih")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

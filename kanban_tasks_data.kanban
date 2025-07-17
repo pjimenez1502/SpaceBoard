@@ -10,12 +10,22 @@
 		{
 			"uuid": "b595b85c-95ea-455d-8d31-320195797a64",
 			"title": "CONCEPT",
-			"tasks": []
+			"tasks": [
+				"2ae79579-a8a3-4eb8-8be1-5d1cd8a4edb0",
+				"115b827f-20de-458e-a233-90ef303a15cf",
+				"df6c5f43-dee8-4b90-9e58-d8e8fd9288b5",
+				"893c6c7e-1c60-47cf-9c15-63fb16db3b01",
+				"71902d00-a5a6-4274-918e-ac1703adecef"
+			]
 		},
 		{
 			"uuid": "a458d220-adbc-4e5e-946e-7af87f563398",
 			"title": "STASH",
-			"tasks": []
+			"tasks": [
+				"8771b68c-0003-4bdf-b0e4-ca152bcc74e9",
+				"91bb897c-91c4-4999-aab3-c22f33351b63",
+				"d4c72c68-2a3d-4c36-b41d-b9c152fcb198"
+			]
 		},
 		{
 			"uuid": "04b80cbf-3c26-4d9b-ae98-befe02d6b193",
@@ -33,7 +43,64 @@
 			"tasks": []
 		}
 	],
-	"tasks": [],
+	"tasks": [
+		{
+			"uuid": "2ae79579-a8a3-4eb8-8be1-5d1cd8a4edb0",
+			"title": "GAME LOOP",
+			"description": "\nPREPARATION PHASE >\nEVENT PHASE >?\nCOMBAT PHASE >?\n\nPreparation: Spend resources, repair, manage, decide where to jump next\nEvent: (optional) if jumping to a non hostile coordinate\nCombat: if jumping to a hostile coordinate, or if triggered by event\n\n",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "115b827f-20de-458e-a233-90ef303a15cf",
+			"title": "AESTETIC",
+			"description": "https://x.com/aeoridev/status/1940866408004702645",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "df6c5f43-dee8-4b90-9e58-d8e8fd9288b5",
+			"title": "SHIPS",
+			"description": "\nCAPITAL > Main ship if destroyed, player loses run\n\nFRIGATE > Medium ship (support)\n\nsmall ships> small ships launched from big ships. different roles (fighter, support, attack...)\n\n\n\nShip stats:\nHull\nShield\nSpeed\n\nModules: \nHardpoints\n\n\n\nHull\nShield\nThrusters\nCabin",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "893c6c7e-1c60-47cf-9c15-63fb16db3b01",
+			"title": "RESOURCES",
+			"description": "\nScrap - main resource. Builds and repairs standard\nAlloys - build and repair better stuff\n\nFuel - needed to move large and small ships\nCore Fuel - needed for starlight jump\n\n\n\nCrew\nPilots\nCivilians\n\nRations\nWater\n",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "8771b68c-0003-4bdf-b0e4-ca152bcc74e9",
+			"title": "FLEET SCENE (preparation)",
+			"description": "\nUI:\n\t- Resources:\n\t\t\t- Scrap\n\t\t\t- Alloys\n\n\t\t\t- Fuel\n\t\t\t- Jump Fuel\n\n\t\t\t- Crew\n\t\t\t- Pilots\n\t\t\t- Civilians\n\n\t\t\t- Rations\n\t\t\t- Water\n\nButtons:\n\t\t- Repair:\n\t\t\t\t- Systems\n\t\t\t\t- Hull\n\t\t\t\t- Ships\n\n\t\t- Jump\n\n\t\t- Ship Report:\n\t\t\t(Opens window that shows status of ship and list installed modules and cargo)\n\t\t",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "d4c72c68-2a3d-4c36-b41d-b9c152fcb198",
+			"title": "MAP",
+			"description": "",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "91bb897c-91c4-4999-aab3-c22f33351b63",
+			"title": "GRID SCENE (combat)",
+			"description": "",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "71902d00-a5a6-4274-918e-ac1703adecef",
+			"title": "MODULES",
+			"description": "\nCategories:\n\nHardpoint\t\t()\nEngineering\n\n",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		}
+	],
 	"layout": {
 		"columns": [
 			[
