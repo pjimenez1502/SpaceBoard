@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://doa3ilpvhjo38"]
 
-[ext_resource type="Script" uid="uid://dt3bopsy1hytc" path="res://Components/Game/DynamicBackground.gd" id="1_5i01g"]
-[ext_resource type="Script" uid="uid://buuyilmko3mo8" path="res://Components/Game/StartMenu.gd" id="1_y0opo"]
+[ext_resource type="Script" uid="uid://dt3bopsy1hytc" path="res://Components/Game/Startmenu/DynamicBackground.gd" id="1_5i01g"]
+[ext_resource type="Script" uid="uid://buuyilmko3mo8" path="res://Components/Game/Startmenu/StartMenu.gd" id="1_y0opo"]
 
 [sub_resource type="Gradient" id="Gradient_fy4ai"]
 offsets = PackedFloat32Array(0, 0.86911)

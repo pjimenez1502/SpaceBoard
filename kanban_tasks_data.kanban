@@ -30,7 +30,10 @@
 		{
 			"uuid": "04b80cbf-3c26-4d9b-ae98-befe02d6b193",
 			"title": "TODO",
-			"tasks": []
+			"tasks": [
+				"340d9d52-9f12-4c70-833e-4e850f6d13a4",
+				"37c2faaa-9458-4f11-ad52-fcd50eceeee6"
+			]
 		},
 		{
 			"uuid": "48221522-2be5-4c66-95bf-9bbe47a81518",
@@ -97,6 +100,20 @@
 			"uuid": "71902d00-a5a6-4274-918e-ac1703adecef",
 			"title": "MODULES",
 			"description": "\nCategories:\n\nHardpoint\t\t()\nEngineering\n\n",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "340d9d52-9f12-4c70-833e-4e850f6d13a4",
+			"title": "STATION",
+			"description": "\nComposed of rings (Levels)\nEach level has 4 attatchment points (N, S, W, E)\n\nEach ring has a level, meaning it can support up to X attatchment levels \n\t- (ex: lvl1 ring can support 4 attatchment levels, meaning it can support 4 lvl1 attatchments, or 2 lvl2 attatchments, or 1 lvl4 attatchment)\nEach attatchment has a level, increasing it's effectiveness.\n\n\nEach new ring is increasingly more expensive\nEach ring level is increasingly more expensive\n",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "37c2faaa-9458-4f11-ad52-fcd50eceeee6",
+			"title": "ATTATCHMENTS",
+			"description": "Attatchment types:\n\nPOWER\nHANGAR (industrial, civilian, militar)\nLAB\nREFINERY",
 			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
 			"steps": []
 		}

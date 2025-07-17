@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjqgf73smtn4y"]
+[gd_scene load_steps=10 format=3 uid="uid://cjqgf73smtn4y"]
 
 [ext_resource type="Shader" uid="uid://capyldf343kln" path="res://Shader/Edge Detection.gdshader" id="1_3jfne"]
 [ext_resource type="Script" uid="uid://dk8r21vxit2ha" path="res://Components/Station/Station.gd" id="1_11fnl"]
 [ext_resource type="Script" uid="uid://whmuc02c17w6" path="res://Components/Station/station_scene.gd" id="1_qot31"]
+[ext_resource type="Script" uid="uid://jjdn75ju5cku" path="res://Components/Station/camera_pivot.gd" id="3_53pab"]
 [ext_resource type="Script" uid="uid://c1fm12tdgiak3" path="res://Components/Station/debug_resources.gd" id="4_ymya1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s3gyw"]
 height = 0.5
+
+[sub_resource type="Environment" id="Environment_3jfne"]
+background_mode = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_11fnl"]
 flip_faces = true
@@ -22,9 +26,6 @@ shader_parameter/darken_amount = 0.3
 shader_parameter/lighten_amount = 1.5
 shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
 shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="Environment" id="Environment_3jfne"]
-background_mode = 1
 
 [node name="StationScene" type="Control"]
 texture_filter = 1
@@ -61,22 +62,26 @@ transform = Transform3D(0.857116, -0.36305, 0.36544, 0.503461, 0.440309, -0.7434
 light_energy = 0.1
 
 [node name="Station" type="Node3D" parent="SubViewportContainer/SubViewport/Station Scene"]
+transform = Transform3D(0.819152, -0.573576, 0, 0.554032, 0.79124, -0.258819, 0.148453, 0.212012, 0.965926, 0, 0, 0)
 script = ExtResource("1_11fnl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene/Station"]
 mesh = SubResource("CylinderMesh_s3gyw")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Station Scene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Station Scene"]
+environment = SubResource("Environment_3jfne")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene/Camera3D"]
+[node name="CameraPivot" type="Node3D" parent="SubViewportContainer/SubViewport/Station Scene"]
+script = ExtResource("3_53pab")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot/Camera3D"]
 visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_11fnl")
 surface_material_override/0 = SubResource("ShaderMaterial_b54n2")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Station Scene"]
-environment = SubResource("Environment_3jfne")
 
 [node name="BuyMenu" type="Control" parent="."]
 custom_minimum_size = Vector2(200, 0)
@@ -94,13 +99,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="BuyMenu/VBoxContainer"]
+[node name="Structural" type="Label" parent="BuyMenu/VBoxContainer"]
 layout_mode = 2
-text = "Structural"
+text = "Structural:"
 
-[node name="GridContainer" type="GridContainer" parent="BuyMenu/VBoxContainer"]
+[node name="BuyGroup Structural" type="GridContainer" parent="BuyMenu/VBoxContainer"]
 layout_mode = 2
 columns = 3
+
+[node name="HSeparator" type="HSeparator" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Power" type="Label" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+text = "Power:"
+
+[node name="BuyGroup Power" type="GridContainer" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="HSeparator2" type="HSeparator" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Hangar" type="Label" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+text = "Hangar:"
+
+[node name="BuyGroup Hangar" type="GridContainer" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="HSeparator3" type="HSeparator" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Production" type="Label" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+text = "Production:"
+
+[node name="BuyGroup Production" type="GridContainer" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="HSeparator4" type="HSeparator" parent="BuyMenu/VBoxContainer"]
+layout_mode = 2
 
 [node name="DebugResources" type="Control" parent="."]
 layout_mode = 1
