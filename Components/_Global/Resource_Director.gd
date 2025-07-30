@@ -73,6 +73,9 @@ func refund_last() -> void:
 func update_power_gen(id: int, value: int) -> void:
 	power_sources[id] = value
 	send_power_update()
+func update_power_use(id: int, value: int) -> void:
+	power_uses[id] = value
+	send_power_update()
 
 func send_resource_update() -> void:
 	RESOURCES_UPDATE.emit(resources)
