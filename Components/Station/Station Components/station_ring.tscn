@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://i1wet1ug8xht"]
+
+[ext_resource type="Script" uid="uid://od3f4tofcamn" path="res://Components/Station/Station Components/station_ring.gd" id="1_dtv46"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i18me"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.5
+radial_segments = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dtv46"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.2
+radial_segments = 16
+
+[sub_resource type="TorusMesh" id="TorusMesh_dtv46"]
+inner_radius = 0.2
+outer_radius = 0.4
+rings = 16
+ring_segments = 8
+
+[sub_resource type="TorusMesh" id="TorusMesh_i18me"]
+inner_radius = 0.2
+outer_radius = 0.5
+rings = 16
+ring_segments = 8
+
+[sub_resource type="TorusMesh" id="TorusMesh_u8xbd"]
+inner_radius = 0.2
+outer_radius = 0.55
+rings = 16
+ring_segments = 8
+
+[node name="Station Ring" type="Node3D"]
+script = ExtResource("1_dtv46")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Center" type="MeshInstance3D" parent="Mesh"]
+mesh = SubResource("CylinderMesh_i18me")
+
+[node name="Attatchment Z" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dtv46")
+
+[node name="Attatchment X" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dtv46")
+
+[node name="RingLevels" type="Node3D" parent="Mesh"]
+
+[node name="Ring(lvl1)" type="MeshInstance3D" parent="Mesh/RingLevels"]
+mesh = SubResource("TorusMesh_dtv46")
+skeleton = NodePath("../..")
+
+[node name="Ring(lvl2)" type="MeshInstance3D" parent="Mesh/RingLevels"]
+visible = false
+mesh = SubResource("TorusMesh_i18me")
+skeleton = NodePath("../Ring(lvl1)")
+
+[node name="Ring(lvl3)" type="MeshInstance3D" parent="Mesh/RingLevels"]
+visible = false
+mesh = SubResource("TorusMesh_u8xbd")
+skeleton = NodePath("../Ring(lvl1)")

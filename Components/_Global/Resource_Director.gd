@@ -16,7 +16,6 @@ var resources: Dictionary[String, int] = {
 }
 
 
-
 func set_starting_resource_values() -> void:
 	resources = {
 		"credits": 100,

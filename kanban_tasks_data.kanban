@@ -113,7 +113,7 @@
 		{
 			"uuid": "37c2faaa-9458-4f11-ad52-fcd50eceeee6",
 			"title": "ATTATCHMENTS",
-			"description": "Attatchment types:\n\nPOWER\nHANGAR (industrial, civilian, militar)\nLAB\nREFINERY",
+			"description": "Attatchment types:\n\nPOWER\n\t- Reactor: (requires cores,  +++power)\n\t- Solar Array: (maintenance?,  +power)\n\nHANGAR\n\t- Civilian (+income, +scrap)\n\t- Industrial (+ore)\n\t- Militar\t(defense)\n\nPRODUCTION:\n\t- Lab: (+research)?\n\t- Refinery: (-ore, +alloy)\n\n\nDEFENSE:\n\t- Turret",
 			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
 			"steps": []
 		}
