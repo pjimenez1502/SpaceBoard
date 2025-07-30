@@ -6,6 +6,7 @@ class_name StationAttachment
 @onready var lvl_2: MeshInstance3D = $Mesh/Levels/lvl_2
 @onready var lvl_3: MeshInstance3D = $Mesh/Levels/lvl_3
 
+var attachment_id: int
 var attachment_slot: int
 var attatchment_level: int = 1
 

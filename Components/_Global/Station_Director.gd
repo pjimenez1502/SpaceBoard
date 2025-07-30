@@ -28,11 +28,14 @@ func cancel_attachment_selection() -> void:
 	ResourceDirector.refund_last()
 	show_slot_buttons(false)
 
+var last_attachment_id : int = 1
 func build_attachment(ring: int, slot: int) -> void:
 	var new_attachment : StationAttachment = selected_attachment_data.scene.instantiate()
 	station.add_child(new_attachment)
 	new_attachment.position = Vector3.UP * ring * RING_HEIGHT
 	new_attachment.rotation = Vector3.UP * deg_to_rad(90 * slot)
+	new_attachment.attachment_id = last_attachment_id
+	last_attachment_id += 1
 	
 	new_attachment.on_build()
 	show_slot_buttons(false)

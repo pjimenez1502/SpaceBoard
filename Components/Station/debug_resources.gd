@@ -8,6 +8,7 @@ extends Control
 
 func _ready() -> void:
 	ResourceDirector.RESOURCES_UPDATE.connect(update_debug_resources)
+	ResourceDirector.POWER_UPDATE.connect(update_power)
 	GameDirector.SIMSPEED_UPDATE.connect(update_simspeed)
 	request_update()
 
@@ -16,9 +17,16 @@ func update_debug_resources(resources: Dictionary) -> void:
 		credits.text = "Credits: %d" % resources["credits"]
 	if resources.has("scrap"):
 		scrap.text = "Scrap: %d" % resources["scrap"]
-	if resources.has("power") or resources.has("used_power"):
-		power.text = "Power: %d/%d" % [resources["used_power"], resources["power"]]
-	print(resources)
+	
+	#print(resources)
+
+func sum(accum: int, number: int) -> int:
+	return accum + number
+func update_power(power_data: Dictionary) -> void:
+	var power_generated: int = power_data["sources"].values().reduce(sum, 0)
+	var power_used: int = power_data["uses"].values().reduce(sum, 0)
+	
+	power.text = "Power: %d/%d" % [power_used, power_generated]
 
 func update_simspeed(simspeed: int) -> void:
 	sim_speed.text = "Speed: %dX" % simspeed
