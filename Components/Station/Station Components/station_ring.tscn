@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://i1wet1ug8xht"]
+[gd_scene load_steps=8 format=3 uid="uid://i1wet1ug8xht"]
 
 [ext_resource type="Script" uid="uid://od3f4tofcamn" path="res://Components/Station/Station Components/station_ring.gd" id="1_dtv46"]
+[ext_resource type="PackedScene" uid="uid://dkctibhnt8qyf" path="res://Components/Station/Station Components/AddButton/slot_button.tscn" id="2_u8xbd"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_i18me"]
 top_radius = 0.2
@@ -32,8 +33,9 @@ outer_radius = 0.55
 rings = 16
 ring_segments = 8
 
-[node name="Station Ring" type="Node3D"]
+[node name="Station Ring" type="Node3D" node_paths=PackedStringArray("slot_buttons")]
 script = ExtResource("1_dtv46")
+slot_buttons = [NodePath("SlotButtons/SlotButton 0"), NodePath("SlotButtons/SlotButton 1"), NodePath("SlotButtons/SlotButton 2"), NodePath("SlotButtons/SlotButton 3")]
 
 [node name="Mesh" type="Node3D" parent="."]
 
@@ -63,3 +65,20 @@ skeleton = NodePath("../Ring(lvl1)")
 visible = false
 mesh = SubResource("TorusMesh_u8xbd")
 skeleton = NodePath("../Ring(lvl1)")
+
+[node name="SlotButtons" type="Node3D" parent="."]
+
+[node name="SlotButton 0" parent="SlotButtons" instance=ExtResource("2_u8xbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="SlotButton 1" parent="SlotButtons" instance=ExtResource("2_u8xbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+slot = 1
+
+[node name="SlotButton 2" parent="SlotButtons" instance=ExtResource("2_u8xbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+slot = 2
+
+[node name="SlotButton 3" parent="SlotButtons" instance=ExtResource("2_u8xbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+slot = 3

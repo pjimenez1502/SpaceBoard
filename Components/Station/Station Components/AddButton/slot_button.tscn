@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkctibhnt8qyf"]
 
-[ext_resource type="Script" uid="uid://b20wlmjrqkwma" path="res://Components/Station/Station Components/AddButton/add_button.gd" id="1_jxp2g"]
-[ext_resource type="Texture2D" uid="uid://cfk25eh7odb5b" path="res://UI/Add_button.png" id="2_e0vqk"]
+[ext_resource type="Script" uid="uid://b20wlmjrqkwma" path="res://Components/Station/Station Components/AddButton/slot_button.gd" id="1_6egk2"]
+[ext_resource type="Texture2D" uid="uid://cfk25eh7odb5b" path="res://UI/Add_button.png" id="2_u61yg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e0vqk"]
 radius = 0.147592
 
-[node name="AddButton" type="Node3D"]
-script = ExtResource("1_jxp2g")
+[node name="SlotButton" type="Node3D"]
+script = ExtResource("1_6egk2")
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -18,6 +18,6 @@ shape = SubResource("SphereShape3D_e0vqk")
 pixel_size = 0.015
 billboard = 1
 texture_filter = 0
-texture = ExtResource("2_e0vqk")
+texture = ExtResource("2_u61yg")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://cesr2h74mfa25"]
+
+[ext_resource type="PackedScene" uid="uid://i1wet1ug8xht" path="res://Components/Station/Station Components/station_ring.tscn" id="1_jyvit"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="1_kj0ak"]
+
+[resource]
+script = ExtResource("1_kj0ak")
+id = "station_ring"
+name = "Station Ring"
+cost = {
+"credits": 100
+}
+scene = ExtResource("1_jyvit")
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

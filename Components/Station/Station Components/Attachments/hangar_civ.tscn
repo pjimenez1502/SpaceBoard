@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dckft0s31tfki"]
+
+[ext_resource type="Script" uid="uid://c4dolxehjqnmq" path="res://Components/Station/Station Components/Attachments/hangar_civ.gd" id="1_3ot3c"]
+
+[node name="Hangar_Civ" type="Node3D"]
+script = ExtResource("1_3ot3c")
+ship_frequency = 1

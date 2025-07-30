@@ -9,10 +9,12 @@ class_name StationRing
 var ring_slot: int = 0
 var ring_level: int = 1
 
+@export var slot_buttons : Array[SlotButton]
 @export var support_per_level : int = 4
+var used_slots: Array[int]
 
-func place_model(position: Vector3, ring: int) -> void:
-	pass
+func _ready() -> void:
+	show_slot_buttons(false)
 
 func set_ring_level(level: int) -> void:
 	ring_level = level
@@ -26,3 +28,9 @@ func set_ring_level(level: int) -> void:
 			ring_lvl_2_.visible = true
 		3:
 			ring_lvl_3_.visible = true
+
+func show_slot_buttons(value: bool) -> void:
+	for button: SlotButton in slot_buttons:
+		if used_slots.has(button.slot):
+			button.visible = false
+		button.visible = value

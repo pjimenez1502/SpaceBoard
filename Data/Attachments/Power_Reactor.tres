@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://4ns40oyb25wu"]
+
+[ext_resource type="PackedScene" uid="uid://bqt01u5qahpv" path="res://Components/Station/Station Components/Attachments/power_reactor.tscn" id="1_nnwrk"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="2_suov4"]
+
+[resource]
+script = ExtResource("2_suov4")
+id = "power_reactor"
+name = "Reactor"
+cost = {
+"credits": 60
+}
+scene = ExtResource("1_nnwrk")
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

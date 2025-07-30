@@ -137,13 +137,13 @@ text = "Power:"
 layout_mode = 2
 columns = 3
 
-[node name="TextureButton" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
+[node name="Power_Reactor" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture_normal = ExtResource("5_bkg3q")
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
+[node name="Power_Solar" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture_normal = ExtResource("5_bkg3q")
@@ -248,4 +248,12 @@ text = "Credits: 000"
 layout_mode = 2
 text = "Scrap: 000"
 
+[node name="HSeparator2" type="HSeparator" parent="DebugResources/VBoxContainer"]
+layout_mode = 2
+
+[node name="Power" type="Label" parent="DebugResources/VBoxContainer"]
+layout_mode = 2
+text = "Power: 00/00"
+
 [connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="BuyMenu" method="buy_ring"]
+[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="BuyMenu" method="buy_power_reactor"]
