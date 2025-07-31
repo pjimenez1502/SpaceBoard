@@ -40,18 +40,18 @@ func set_starting_resource_values() -> void:
 	}
 	send_resource_update()
 
-func update_value(resource: String, value: int) -> bool:
+func check_value(resource: String, value: int) -> bool:
 	if !resources.has(resource):
 		printerr("Invalid Resource ID: ", resource)
 		return false
 	if resources[resource] + value < 0:
-		printerr("Tried to update resource below 0.")
+		printerr("Not enough of resource: %s." % resource)
 		return false
-	
-	resources[resource] += value
-	#print(resources)
-	send_resource_update()
 	return true
+	
+func update_value(resource: String, value: int) -> void:
+	resources[resource] += value
+	send_resource_update()
 
 func set_value(resource: String, value: int) -> void:
 	resources[resource] = value
@@ -59,10 +59,15 @@ func set_value(resource: String, value: int) -> void:
 
 func check_cost(cost: Dictionary, cost_multiplier: int = 1) -> bool:
 	for resource: String in cost:
-		if !update_value(resource, -cost[resource]):
+		if !check_value(resource, -cost[resource]*cost_multiplier):
 			return false
-	last_bought = cost
 	return true
+
+func purchase_cost(cost: Dictionary, cost_multiplier: int = 1) -> void:
+	last_bought = cost
+	for resource: String in cost:
+		update_value(resource, -cost[resource]*cost_multiplier)
+	
 
 var last_bought : Dictionary
 func refund_last() -> void:

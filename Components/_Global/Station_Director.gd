@@ -36,7 +36,7 @@ func build_attachment(ring: int, slot: int) -> void:
 	new_attachment.rotation = Vector3.UP * deg_to_rad(90 * slot)
 	new_attachment.attachment_id = last_attachment_id
 	last_attachment_id += 1
-	
+	ResourceDirector.purchase_cost(selected_attachment_data.cost)
 	new_attachment.on_build()
 	show_slot_buttons(false)
 

@@ -9,15 +9,15 @@ var attachment_dictionary: Dictionary = {
 
 
 func buy_ring() -> void:
-	buy_attachment("station_ring", StationDirector.st_rings.size())
+	select_attachment("station_ring", StationDirector.st_rings.size())
 
 func buy_power_reactor() -> void:
-	buy_attachment("power_reactor")
+	select_attachment("power_reactor")
 
 func buy_hangar_civilian() -> void:
-	buy_attachment("hangar_civilian")
+	select_attachment("hangar_civilian")
 
-func buy_attachment(id: String, cost_multiplier: int = 1) -> void:
+func select_attachment(id: String, cost_multiplier: int = 1) -> void:
 	if !ResourceDirector.check_cost(attachment_dictionary[id].cost, cost_multiplier):
 		return
 	StationDirector.select_attachment(attachment_dictionary[id])
