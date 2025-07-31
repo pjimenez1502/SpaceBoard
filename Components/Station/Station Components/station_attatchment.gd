@@ -2,9 +2,9 @@ extends Node3D
 class_name StationAttachment
 
 @onready var level_meshes: Node3D = $Mesh/Levels
-@onready var lvl_1: MeshInstance3D = $Mesh/Levels/lvl_1
-@onready var lvl_2: MeshInstance3D = $Mesh/Levels/lvl_2
-@onready var lvl_3: MeshInstance3D = $Mesh/Levels/lvl_3
+@onready var lvl_1: Node3D = $Mesh/Levels/lvl_1
+@onready var lvl_2: Node3D = $Mesh/Levels/lvl_2
+@onready var lvl_3: Node3D = $Mesh/Levels/lvl_3
 
 var attachment_id: int
 var attachment_slot: int

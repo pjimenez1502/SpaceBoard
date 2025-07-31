@@ -1,7 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dckft0s31tfki"]
+[gd_scene load_steps=4 format=3 uid="uid://dckft0s31tfki"]
 
 [ext_resource type="Script" uid="uid://c4dolxehjqnmq" path="res://Components/Station/Station Components/Attachments/hangar_civ.gd" id="1_3ot3c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_62t6p"]
+size = Vector3(0.2, 0.15, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7cqsw"]
+size = Vector3(0.3, 0.2, 0.32)
 
 [node name="Hangar_Civ" type="Node3D"]
 script = ExtResource("1_3ot3c")
 ship_frequency = 1
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Levels" type="Node3D" parent="Mesh"]
+
+[node name="lvl_1" type="Node3D" parent="Mesh/Levels"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/Levels/lvl_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43983, 0, 0)
+mesh = SubResource("BoxMesh_62t6p")
+
+[node name="lvl_2" type="Node3D" parent="Mesh/Levels"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/Levels/lvl_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477936, 0, 0)
+mesh = SubResource("BoxMesh_7cqsw")
+
+[node name="lvl_3" type="Node3D" parent="Mesh/Levels"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477936, 0, 0)
+mesh = SubResource("BoxMesh_7cqsw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(0.793704, 0, 0.608304, 0, 1, 0, -0.608304, 0, 0.793704, 0.421, 0, -0.2)
+mesh = SubResource("BoxMesh_62t6p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(0.793353, 0, -0.608761, 0, 1, 0, 0.608761, 0, 0.793353, 0.421, 0, 0.2)
+mesh = SubResource("BoxMesh_62t6p")

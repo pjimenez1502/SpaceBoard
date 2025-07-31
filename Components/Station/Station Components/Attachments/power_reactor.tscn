@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqt01u5qahpv"]
+[gd_scene load_steps=6 format=3 uid="uid://bqt01u5qahpv"]
 
 [ext_resource type="Script" uid="uid://c08jmfst80hv1" path="res://Components/Station/Station Components/Attachments/power_reactor.gd" id="1_newho"]
-[ext_resource type="PackedScene" uid="uid://i1wet1ug8xht" path="res://Components/Station/Station Components/station_ring.tscn" id="2_t8b5m"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_t8b5m"]
 top_radius = 0.1
@@ -23,8 +22,6 @@ height = 0.5
 
 [node name="Power_Reactor" type="Node3D"]
 script = ExtResource("1_newho")
-
-[node name="Station Ring" parent="." instance=ExtResource("2_t8b5m")]
 
 [node name="Mesh" type="Node3D" parent="."]
 

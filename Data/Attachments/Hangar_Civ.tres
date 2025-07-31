@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://br4p2exbqlehm"]
+
+[ext_resource type="PackedScene" uid="uid://dckft0s31tfki" path="res://Components/Station/Station Components/Attachments/hangar_civ.tscn" id="1_odhhr"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="2_6qf1u"]
+
+[resource]
+script = ExtResource("2_6qf1u")
+id = "hangar_civilian"
+name = "Civilian Hangar"
+cost = {
+"credits": 40
+}
+scene = ExtResource("1_odhhr")
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"
