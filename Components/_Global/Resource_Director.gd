@@ -67,6 +67,7 @@ func purchase_cost(cost: Dictionary, cost_multiplier: int = 1) -> void:
 	last_purchase = cost
 	for resource: String in cost:
 		update_value(resource, -cost[resource]*cost_multiplier)
+		print(-cost[resource]*cost_multiplier)
 	
 
 var last_purchase : Dictionary

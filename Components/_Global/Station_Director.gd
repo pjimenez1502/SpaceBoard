@@ -12,7 +12,7 @@ func generate_new_station(station_slot: Node3D) -> void:
 
 func build_ring(scene: PackedScene) -> void: ## TODO: SWITCH TO BUILD FROM RESOURCE DATA
 	var ring_index: int = find_next_index()
-	print("NEXT_INDEX: ", ring_index)
+	#print("NEXT_INDEX: ", ring_index)
 	
 	var new_ring: StationRing = scene.instantiate()
 	station.add_child(new_ring)

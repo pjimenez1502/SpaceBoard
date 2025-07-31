@@ -7,9 +7,11 @@ var attachment_dictionary: Dictionary = {
 }
 
 
-
 func buy_ring() -> void:
-	select_attachment("station_ring", StationDirector.st_rings.size())
+	if !ResourceDirector.check_cost(attachment_dictionary["station_ring"].cost, StationDirector.st_rings.size()):
+		return
+	ResourceDirector.purchase_cost(attachment_dictionary["station_ring"].cost, StationDirector.st_rings.size())
+	StationDirector.build_ring(attachment_dictionary["station_ring"].scene)
 
 func buy_power_reactor() -> void:
 	select_attachment("power_reactor")
