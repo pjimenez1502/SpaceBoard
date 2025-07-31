@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjqgf73smtn4y"]
+[gd_scene load_steps=12 format=3 uid="uid://cjqgf73smtn4y"]
 
 [ext_resource type="Shader" uid="uid://capyldf343kln" path="res://Shader/Edge Detection.gdshader" id="1_3jfne"]
 [ext_resource type="Script" uid="uid://whmuc02c17w6" path="res://Components/Station/station_scene.gd" id="1_qot31"]
+[ext_resource type="Script" uid="uid://daloi2hy7hm0e" path="res://Components/Station/station.gd" id="2_o1uw3"]
 [ext_resource type="Script" uid="uid://jjdn75ju5cku" path="res://Components/Station/camera_pivot.gd" id="3_53pab"]
 [ext_resource type="Script" uid="uid://c1fm12tdgiak3" path="res://Components/Station/debug_resources.gd" id="4_ymya1"]
 [ext_resource type="Texture2D" uid="uid://beo4ycfrjkme4" path="res://UI/ButtonBorder.png" id="5_bkg3q"]
@@ -67,6 +68,7 @@ light_energy = 0.1
 [node name="Station" type="Node3D" parent="SubViewportContainer/SubViewport/Station Scene"]
 unique_name_in_owner = true
 transform = Transform3D(0.819152, -0.573576, 0, 0.554032, 0.79124, -0.258819, 0.148453, 0.212012, 0.965926, 0, 0, 0)
+script = ExtResource("2_o1uw3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Station Scene"]
 environment = SubResource("Environment_3jfne")

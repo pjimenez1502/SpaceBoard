@@ -29,6 +29,9 @@ func update_power(power_data: Dictionary) -> void:
 	power.text = "Power: %d/%d" % [power_used, power_generated]
 
 func update_simspeed(simspeed: int) -> void:
+	if simspeed == 0:
+		sim_speed.text = "Speed: Paused"
+		return
 	sim_speed.text = "Speed: %dX" % simspeed
 
 func request_update() -> void:
