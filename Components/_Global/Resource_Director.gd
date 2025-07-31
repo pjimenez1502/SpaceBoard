@@ -64,15 +64,15 @@ func check_cost(cost: Dictionary, cost_multiplier: int = 1) -> bool:
 	return true
 
 func purchase_cost(cost: Dictionary, cost_multiplier: int = 1) -> void:
-	last_bought = cost
+	last_purchase = cost
 	for resource: String in cost:
 		update_value(resource, -cost[resource]*cost_multiplier)
 	
 
-var last_bought : Dictionary
+var last_purchase : Dictionary
 func refund_last() -> void:
-	for resource: String in last_bought:
-		update_value(resource, last_bought[resource])
+	for resource: String in last_purchase:
+		update_value(resource, last_purchase[resource])
 
 
 func update_power_gen(id: int, value: int) -> void:

@@ -18,6 +18,9 @@ func buy_hangar_civilian() -> void:
 	select_attachment("hangar_civilian")
 
 func select_attachment(id: String, cost_multiplier: int = 1) -> void:
+	if StationDirector.check_reselecting_attachment(id):
+		StationDirector.cancel_attachment_selection()
+		return
 	if !ResourceDirector.check_cost(attachment_dictionary[id].cost, cost_multiplier):
 		return
 	StationDirector.select_attachment(attachment_dictionary[id])

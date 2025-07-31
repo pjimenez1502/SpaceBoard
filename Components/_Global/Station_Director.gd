@@ -25,8 +25,13 @@ func select_attachment(attachment_data: AttachmentData) -> void:
 	show_slot_buttons(true)
 func cancel_attachment_selection() -> void:
 	selected_attachment_data = null
-	ResourceDirector.refund_last()
 	show_slot_buttons(false)
+func check_reselecting_attachment(attachment_id: String) -> bool:
+	if !selected_attachment_data:
+		return false
+	if attachment_id == selected_attachment_data.id:
+		return true
+	return false
 
 var last_attachment_id : int = 1
 func build_attachment(ring: int, slot: int) -> void:
