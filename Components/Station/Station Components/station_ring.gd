@@ -11,7 +11,6 @@ var ring_level: int = 1
 
 @export var slot_buttons : Array[SlotButton]
 @export var support_per_level : int = 4
-var used_slots: Array[int]
 
 func _ready() -> void:
 	show_slot_buttons(false)
@@ -31,6 +30,6 @@ func set_ring_level(level: int) -> void:
 
 func show_slot_buttons(value: bool) -> void:
 	for button: SlotButton in slot_buttons:
-		if used_slots.has(button.slot):
-			button.visible = false
 		button.visible = value
+		if button.slot_in_use:
+			button.visible = false
