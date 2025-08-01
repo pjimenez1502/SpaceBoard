@@ -10,6 +10,8 @@ var attachment_id: int
 var attachment_slot: int
 var attatchment_level: int = 1
 
+var powered: bool
+
 func set_level(level:int) -> void:
 	attatchment_level = level
 	for child in level_meshes:
@@ -24,7 +26,8 @@ func set_level(level:int) -> void:
 			lvl_3.visible = true
 
 func on_build() -> void:
-	pass
+	ResourceDirector.power_check()
+
 func on_update() -> void:
 	pass
 func on_shutdown() -> void:

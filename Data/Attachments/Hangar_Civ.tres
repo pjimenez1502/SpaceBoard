@@ -10,5 +10,6 @@ name = "Civilian Hangar"
 cost = {
 "credits": 40
 }
+power_draw = 5
 scene = ExtResource("1_odhhr")
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

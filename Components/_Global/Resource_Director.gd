@@ -83,6 +83,11 @@ func update_power_use(id: int, value: int) -> void:
 	power_uses[id] = value
 	send_power_update()
 
+func power_check() -> void:
+	## Run through each power user and check if there is enough power remaining
+	## Power as many as posible
+	pass
+
 func send_resource_update() -> void:
 	RESOURCES_UPDATE.emit(resources)
 func send_power_update() -> void:

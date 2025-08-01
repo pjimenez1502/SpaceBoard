@@ -43,3 +43,17 @@ mesh = SubResource("BoxMesh_62t6p")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
 transform = Transform3D(0.793353, 0, -0.608761, 0, 1, 0, 0.608761, 0, 0.793353, 0.421, 0, 0.2)
 mesh = SubResource("BoxMesh_62t6p")
+
+[node name="LandingTarget" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, -0.126399)
+
+[node name="EntryTarget" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13117, 0, 0)
+
+[node name="ShipSpace" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="WorkingTimer" type="Timer" parent="."]
+unique_name_in_owner = true

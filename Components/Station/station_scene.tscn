@@ -31,7 +31,7 @@ shader_parameter/radius = 1000.0
 shader_parameter/rimRetraction = 2.0
 shader_parameter/rimBrightness = 1.0
 shader_parameter/rimColor = Color(0.7, 0.5, 0.3, 1)
-shader_parameter/animationSpeed = 0.1
+shader_parameter/animationSpeed = 0.02
 shader_parameter/distortionStrength = 0.25
 
 [sub_resource type="BoxMesh" id="BoxMesh_qpcng"]
@@ -99,6 +99,10 @@ visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_11fnl")
 surface_material_override/0 = SubResource("ShaderMaterial_b54n2")
+
+[node name="TOP DEBUG" type="Camera3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.85279e-06, 9.78628, -3.39233e-07)
+far = 40000.0
 
 [node name="PlanetShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -696.262, -895.603, -656.448)
