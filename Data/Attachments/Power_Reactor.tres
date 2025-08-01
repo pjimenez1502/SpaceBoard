@@ -8,7 +8,8 @@ script = ExtResource("2_suov4")
 id = "power_reactor"
 name = "Reactor"
 cost = {
-"credits": 60
+"credits": 200
 }
+power_draw = 0
 scene = ExtResource("1_nnwrk")
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

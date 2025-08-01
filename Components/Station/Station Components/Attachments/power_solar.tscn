@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bguvr4u841qtj"]
+
+[ext_resource type="Script" uid="uid://bdnnhjrcop2ke" path="res://Components/Station/Station Components/Attachments/power_solar.gd" id="1_yodja"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yodja"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.3
+radial_segments = 16
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yodja"]
+size = Vector2(0.4, 0.2)
+
+[node name="Power_Solar" type="Node3D"]
+script = ExtResource("1_yodja")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Attatchment X" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0.523641, 0, 0)
+mesh = SubResource("CylinderMesh_yodja")
+skeleton = NodePath("../Levels/lvl_1/Solar")
+
+[node name="Levels" type="Node3D" parent="Mesh"]
+
+[node name="lvl_1" type="Node3D" parent="Mesh/Levels"]
+
+[node name="Solar" type="MeshInstance3D" parent="Mesh/Levels/lvl_1"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.612206, 0, 0)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="lvl_2" type="Node3D" parent="Mesh/Levels"]
+visible = false
+
+[node name="Solar" type="MeshInstance3D" parent="Mesh/Levels/lvl_2"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.612206, 0.0835307, -0.0839301)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="Solar2" type="MeshInstance3D" parent="Mesh/Levels/lvl_2"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.612206, -0.0848201, 0.0862602)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="lvl_3" type="Node3D" parent="Mesh/Levels"]
+visible = false
+
+[node name="Solar" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(-4.18391e-08, 1.99782e-08, 1, 0.707107, 0.707107, 1.5458e-08, -0.707107, 0.707107, -4.37114e-08, 0.557181, 0.15513, -0.158257)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="Solar2" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(-4.18391e-08, -1.99782e-08, -1, -0.707107, 0.707107, 1.5458e-08, 0.707107, 0.707107, -4.37114e-08, 0.555053, -0.1565, 0.156918)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="Solar3" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(-4.18391e-08, 1.99782e-08, 1, 0.707107, 0.707107, 1.5458e-08, -0.707107, 0.707107, -4.37114e-08, 0.794368, 0.15513, -0.158257)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="Solar4" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(-4.18391e-08, -1.99782e-08, -1, -0.707107, 0.707107, 1.5458e-08, 0.707107, 0.707107, -4.37114e-08, 0.792239, -0.1565, 0.156918)
+mesh = SubResource("PlaneMesh_yodja")
+skeleton = NodePath("../../..")
+
+[node name="Attatchment X2" type="MeshInstance3D" parent="Mesh/Levels/lvl_3"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0.774902, 0, 0)
+mesh = SubResource("CylinderMesh_yodja")
+skeleton = NodePath("../../lvl_1/Solar")

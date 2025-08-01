@@ -284,4 +284,5 @@ text = "Power: 00/00"
 
 [connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="BuyMenu" method="buy_ring"]
 [connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="BuyMenu" method="buy_power_reactor"]
+[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power/Power_Solar" to="BuyMenu" method="buy_power_solar"]
 [connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Hangar/Hangar_Civ" to="BuyMenu" method="buy_hangar_civilian"]

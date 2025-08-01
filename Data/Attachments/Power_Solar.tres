@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://ck8f2c7jmftd"]
+
+[ext_resource type="PackedScene" uid="uid://bguvr4u841qtj" path="res://Components/Station/Station Components/Attachments/power_solar.tscn" id="1_6ova4"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="2_xav0i"]
+
+[resource]
+script = ExtResource("2_xav0i")
+id = "power_solar"
+name = "Solar Array"
+cost = {
+"credits": 60
+}
+power_draw = 0
+scene = ExtResource("1_6ova4")
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

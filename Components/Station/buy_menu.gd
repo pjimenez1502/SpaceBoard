@@ -3,7 +3,8 @@ extends Control
 var attachment_dictionary: Dictionary = {
 	"station_ring": preload("res://Data/Attachments/StationRing.tres"),
 	"power_reactor": preload("res://Data/Attachments/Power_Reactor.tres"),
-	"hangar_civilian": preload("res://Data/Attachments/Hangar_Civ.tres")
+	"power_solar": preload("res://Data/Attachments/Power_Solar.tres"),
+	"hangar_civilian": preload("res://Data/Attachments/Hangar_Civ.tres"),
 }
 
 
@@ -15,6 +16,8 @@ func buy_ring() -> void:
 
 func buy_power_reactor() -> void:
 	select_attachment("power_reactor")
+func buy_power_solar() -> void:
+	select_attachment("power_solar")
 
 func buy_hangar_civilian() -> void:
 	select_attachment("hangar_civilian")
