@@ -5,15 +5,17 @@ signal POWER_UPDATE
 
 var resources: Dictionary[String, int] = {
 	"credits": 0,
-	"reactor_fuel": 0,
-	#"power": 0,
-	#"used_power": 0,
-	#"scrap": 0,
-	#"alloy": 0,
-	#"fuel": 0,
-	#"jumpfuel": 0,
+	
+	"iron": 0,
+	"titanium": 0,
+	"magnesium": 0,
+	"uranium": 0,
+	
+	"alloy": 0, ## iron + titanium
+	"munition": 0, ## iron + magnesium
+	"reactor_fuel": 0, ## uranium
+	
 	#"crew": 0,
-	#"pilot": 0,
 	#"civilian": 0,
 	#"food": 0,
 	#"water": 0,
@@ -25,18 +27,7 @@ var power_uses: Dictionary
 func set_starting_resource_values() -> void:
 	resources = {
 		"credits": 100,
-		"reactor_fuel": 5,
-		#"power": 0,
-		#"used_power": 0,
-		#"scrap": 100,
-		#"alloy": 10,
-		#"fuel": 100,
-		#"jumpfuel": 10,
-		#"crew": 40,
-		#"pilot": 20,
-		#"civilian": 60,
-		#"food": 100,
-		#"water": 100,
+		"reactor_fuel": 0,
 	}
 	send_resource_update()
 

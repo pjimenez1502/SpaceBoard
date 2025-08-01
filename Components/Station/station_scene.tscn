@@ -1,13 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjqgf73smtn4y"]
+[gd_scene load_steps=18 format=3 uid="uid://cjqgf73smtn4y"]
 
 [ext_resource type="Shader" uid="uid://capyldf343kln" path="res://Shader/Edge Detection.gdshader" id="1_3jfne"]
 [ext_resource type="Script" uid="uid://whmuc02c17w6" path="res://Components/Station/station_scene.gd" id="1_qot31"]
 [ext_resource type="Script" uid="uid://daloi2hy7hm0e" path="res://Components/Station/station.gd" id="2_o1uw3"]
 [ext_resource type="Script" uid="uid://jjdn75ju5cku" path="res://Components/Station/camera_pivot.gd" id="3_53pab"]
-[ext_resource type="Script" uid="uid://c1fm12tdgiak3" path="res://Components/Station/debug_resources.gd" id="4_ymya1"]
 [ext_resource type="Texture2D" uid="uid://beo4ycfrjkme4" path="res://UI/ButtonBorder.png" id="5_bkg3q"]
 [ext_resource type="Shader" uid="uid://cnjoqwufxs428" path="res://Shader/Planet.gdshader" id="5_qpcng"]
-[ext_resource type="Script" uid="uid://c4pbv7w31eigc" path="res://Components/Station/buy_menu.gd" id="6_qpcng"]
+[ext_resource type="PackedScene" uid="uid://cv3rax1tcrg7b" path="res://Components/Station/Menu/buy_menu.tscn" id="6_o1uw3"]
+[ext_resource type="PackedScene" uid="uid://545ql27c72ib" path="res://Components/Station/Menu/debug_resources.tscn" id="7_qpcng"]
+[ext_resource type="Script" uid="uid://c3epqggy05kmc" path="res://Components/Station/Menu/trade_menu.gd" id="8_t36wb"]
+[ext_resource type="Texture2D" uid="uid://dgs3okrq18aro" path="res://UI/BorderSquare.png" id="10_2v0j0"]
+[ext_resource type="Texture2D" uid="uid://sy6gd26adlsj" path="res://UI/Button_48x32.png" id="10_60soq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_11fnl"]
 flip_faces = true
@@ -116,15 +119,64 @@ mesh = SubResource("SphereMesh_o1uw3")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Station Scene"]
 environment = SubResource("Environment_3jfne")
 
-[node name="BuyMenu" type="Control" parent="."]
-custom_minimum_size = Vector2(200, 0)
+[node name="BuyMenu" parent="." instance=ExtResource("6_o1uw3")]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-grow_vertical = 2
-script = ExtResource("6_qpcng")
 
-[node name="MarginContainer" type="MarginContainer" parent="BuyMenu"]
+[node name="DebugResources" parent="." instance=ExtResource("7_qpcng")]
+layout_mode = 1
+
+[node name="TradeMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_t36wb")
+
+[node name="Content" type="Control" parent="TradeMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TradeMenu/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -74.0
+offset_right = 176.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Panel" type="NinePatchRect" parent="TradeMenu/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_2v0j0")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="TradeMenu/Content/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,153 +188,103 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuyMenu/MarginContainer"]
+[node name="BoxContainer" type="VBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="Structural" type="Label" parent="BuyMenu/MarginContainer/VBoxContainer"]
+[node name="Titles" type="HBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
-text = "Structural:"
 
-[node name="BuyGroup Structural" type="GridContainer" parent="BuyMenu/MarginContainer/VBoxContainer"]
+[node name="Comodity" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-columns = 3
+text = "Comodity"
 
-[node name="Ring" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Structural"]
+[node name="Stored" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Stored"
+
+[node name="Buy" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+text = "Buy"
+
+[node name="Sell" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+text = "Sell"
+
+[node name="Curr Order" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Ordered"
+
+[node name="Iron" type="HBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Iron"
+
+[node name="Stored" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "100"
+
+[node name="Buy Input" type="SpinBox" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 999.0
+rounded = true
+
+[node name="Buy Button" type="TextureButton" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+texture_normal = ExtResource("10_60soq")
+
+[node name="VSeparator" type="VSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Sell Input" type="SpinBox" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 999.0
+
+[node name="Sell Button" type="TextureButton" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+texture_normal = ExtResource("10_60soq")
+
+[node name="VSeparator2" type="VSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "0"
+
+[node name="OpenButton" type="TextureButton" parent="TradeMenu"]
 custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="HSeparator" type="HSeparator" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Power" type="Label" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Power:"
-
-[node name="BuyGroup Power" type="GridContainer" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="Power_Reactor" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="Power_Solar" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="HSeparator2" type="HSeparator" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Hangar" type="Label" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Hangar:"
-
-[node name="BuyGroup Hangar" type="GridContainer" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="Hangar_Civ" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Hangar"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="TextureButton3" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Hangar"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="TextureButton4" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Hangar"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="HSeparator3" type="HSeparator" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Production" type="Label" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Production:"
-
-[node name="BuyGroup Production" type="GridContainer" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="TextureButton2" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Production"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="HSeparator4" type="HSeparator" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Defense" type="Label" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Defense:"
-
-[node name="BuyGroup Defense" type="GridContainer" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="TextureButton2" type="TextureButton" parent="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Defense"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture_normal = ExtResource("5_bkg3q")
-stretch_mode = 0
-
-[node name="HSeparator5" type="HSeparator" parent="BuyMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="DebugResources" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -133.0
-offset_bottom = 139.0
-grow_horizontal = 0
-script = ExtResource("4_ymya1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugResources"]
-layout_mode = 1
-anchors_preset = 15
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_bkg3q")
+stretch_mode = 0
 
-[node name="Speed" type="Label" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-text = "Speed: 1X"
-
-[node name="HSeparator" type="HSeparator" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-
-[node name="Credits" type="Label" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-text = "Credits: 000"
-
-[node name="Scrap" type="Label" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-text = "Scrap: 000"
-
-[node name="HSeparator2" type="HSeparator" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-
-[node name="Power" type="Label" parent="DebugResources/VBoxContainer"]
-layout_mode = 2
-text = "Power: 00/00"
-
-[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="BuyMenu" method="buy_ring"]
-[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="BuyMenu" method="buy_power_reactor"]
-[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Power/Power_Solar" to="BuyMenu" method="buy_power_solar"]
-[connection signal="pressed" from="BuyMenu/MarginContainer/VBoxContainer/BuyGroup Hangar/Hangar_Civ" to="BuyMenu" method="buy_hangar_civilian"]
+[connection signal="pressed" from="TradeMenu/OpenButton" to="TradeMenu" method="toggle_open"]

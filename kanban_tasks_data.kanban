@@ -17,14 +17,18 @@
 		{
 			"uuid": "a458d220-adbc-4e5e-946e-7af87f563398",
 			"title": "STASH",
-			"tasks": []
+			"tasks": [
+				"e97d91d0-885c-40d8-a779-e6f45485b70a",
+				"0e863b79-cd40-45a5-bc51-fc85b43f4fd9"
+			]
 		},
 		{
 			"uuid": "04b80cbf-3c26-4d9b-ae98-befe02d6b193",
 			"title": "TODO",
 			"tasks": [
 				"340d9d52-9f12-4c70-833e-4e850f6d13a4",
-				"37c2faaa-9458-4f11-ad52-fcd50eceeee6"
+				"37c2faaa-9458-4f11-ad52-fcd50eceeee6",
+				"a1495bef-c32a-498a-bfad-212124817515"
 			]
 		},
 		{
@@ -47,13 +51,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "893c6c7e-1c60-47cf-9c15-63fb16db3b01",
-			"title": "RESOURCES",
-			"description": "\nScrap - main resource. Builds and repairs standard\nAlloys - build and repair better stuff\n\nFuel - needed to move large and small ships\nCore Fuel - needed for starlight jump\n\n\n\nCrew\nPilots\nCivilians\n\nRations\nWater\n",
-			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
-			"steps": []
-		},
-		{
 			"uuid": "340d9d52-9f12-4c70-833e-4e850f6d13a4",
 			"title": "STATION",
 			"description": "\nComposed of rings (Levels)\nEach level has 4 attatchment points (N, S, W, E)\n\nEach ring has a level, meaning it can support up to X attatchment levels \n\t- (ex: lvl1 ring can support 4 attatchment levels, meaning it can support 4 lvl1 attatchments, or 2 lvl2 attatchments, or 1 lvl4 attatchment)\nEach attatchment has a level, increasing it's effectiveness.\n\n\nEach new ring is increasingly more expensive\nEach ring level is increasingly more expensive\n",
@@ -63,7 +60,28 @@
 		{
 			"uuid": "37c2faaa-9458-4f11-ad52-fcd50eceeee6",
 			"title": "ATTATCHMENTS",
-			"description": "Attatchment types:\n\nPOWER\n\t- Reactor: (requires reactor fuel,  +++power)\n\t- Solar Array: (maintenance?,  +power)\n\nHANGAR\n\t- Civilian (+income, +scrap)\n\t- Trading \n\t- Industrial (+ore)\n\t- Militar\t(defense)\n\nPRODUCTION:\n\t- Lab: (+research)?\n\t- Refinery: (-ore, +alloy)\n\nHABITABILITY:\n\t- Living Quarters (crew lives in rings, civilians live in quarters) (+income, -food)\n\t- Food Farm (+food)\n\nDEFENSE:\n\t- Turret",
+			"description": "\nPOWER\n\t- Reactor: (requires reactor fuel,  +++power) (requires reactor fuel to build so infrastructure is necessary)\n\t- Solar Array: (maintenance?,  +power)\n\nDOCKS\n\t- Civilian (+income, +scrap, -alloy) \n\t\t\t\t-> Ships dock on a timer. By default pay for parking. Additionally, can pay extra if can buy fuel, and pay extra if can buy alloy\n\t- Cargo (trade credits to mats or mats to credits)\n\t- Industrial (+ore)\n\t- Militar\t(defense)\n\nPRODUCTION:\n\t- Lab: (+research)?\n\t- Refinery: (-ore, +alloy)\n\nHABITABILITY:\n\t- Living Quarters (crew lives in rings, civilians live in quarters) (+income, -food)\n\t- Food Farm (+food)\n\nDEFENSE:\n\t- Turret",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "e97d91d0-885c-40d8-a779-e6f45485b70a",
+			"title": "Progress bar until Attachment built",
+			"description": "",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "0e863b79-cd40-45a5-bc51-fc85b43f4fd9",
+			"title": "Progression",
+			"description": "Solar\nCiv Dock (+Credits)\n\n\nCargo Dock (-Credits +Materials)\n\n\nIndustrial Dock (-credits +Ore)\n\n\nRefinery (-ore +T2Mats)",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "a1495bef-c32a-498a-bfad-212124817515",
+			"title": "TRADING",
+			"description": "\n\nComodity\t|\tStored qnt\t|\tCurr Order\t\t|\tBuy\t\t\t\t\t|\tSell\t\t\t\t\t|\nIron\t\t\t\t|\t100\t\t\t\t|\t-100\t\t\t\t\t| [   10 ]  ( buy )\t| [   10 ]  ( sell )\t|",
 			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
 			"steps": []
 		}
