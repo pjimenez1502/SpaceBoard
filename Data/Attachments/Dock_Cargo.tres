@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://doj3y48ty5wl3"]
+
+[ext_resource type="PackedScene" uid="uid://b6v7sxkfkoee2" path="res://Components/Station/Station Components/Attachments/dock_cargo.tscn" id="1_3mxkb"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="2_oyhwx"]
+
+[resource]
+script = ExtResource("2_oyhwx")
+id = "dock_cargo"
+name = "Civilian Dock"
+cost = {
+"credits": 600
+}
+power_draw = 10
+scene = ExtResource("1_3mxkb")
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

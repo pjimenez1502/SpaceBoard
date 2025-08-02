@@ -8,3 +8,4 @@ class_name AttachmentData
 }
 @export var power_draw: int
 @export var scene: PackedScene
+@export var description: String

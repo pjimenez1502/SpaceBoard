@@ -4,7 +4,8 @@ var attachment_dictionary: Dictionary = {
 	"station_ring": preload("res://Data/Attachments/StationRing.tres"),
 	"power_reactor": preload("res://Data/Attachments/Power_Reactor.tres"),
 	"power_solar": preload("res://Data/Attachments/Power_Solar.tres"),
-	"hangar_civilian": preload("res://Data/Attachments/Hangar_Civ.tres"),
+	"dock_civilian": preload("res://Data/Attachments/Dock_Civ.tres"),
+	"dock_cargo": preload("res://Data/Attachments/Dock_Cargo.tres"),
 }
 
 
@@ -19,8 +20,11 @@ func buy_power_reactor() -> void:
 func buy_power_solar() -> void:
 	select_attachment("power_solar")
 
-func buy_hangar_civilian() -> void:
-	select_attachment("hangar_civilian")
+func buy_dock_civilian() -> void:
+	select_attachment("dock_civilian")
+func buy_dock_cargo() -> void:
+	select_attachment("dock_cargo")
+
 
 func select_attachment(id: String, cost_multiplier: int = 1) -> void:
 	if StationDirector.check_reselecting_attachment(id):

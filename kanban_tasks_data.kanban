@@ -60,7 +60,7 @@
 		{
 			"uuid": "37c2faaa-9458-4f11-ad52-fcd50eceeee6",
 			"title": "ATTATCHMENTS",
-			"description": "\nPOWER\n\t- Reactor: (requires reactor fuel,  +++power) (requires reactor fuel to build so infrastructure is necessary)\n\t- Solar Array: (maintenance?,  +power)\n\nDOCKS\n\t- Civilian (+income, +scrap, -alloy) \n\t\t\t\t-> Ships dock on a timer. By default pay for parking. Additionally, can pay extra if can buy fuel, and pay extra if can buy alloy\n\t- Cargo (trade credits to mats or mats to credits)\n\t- Industrial (+ore)\n\t- Militar\t(defense)\n\nPRODUCTION:\n\t- Lab: (+research)?\n\t- Refinery: (-ore, +alloy)\n\nHABITABILITY:\n\t- Living Quarters (crew lives in rings, civilians live in quarters) (+income, -food)\n\t- Food Farm (+food)\n\nDEFENSE:\n\t- Turret",
+			"description": "\nPOWER\n\t- Reactor: (requires reactor fuel,  +++power) (requires reactor fuel to build so infrastructure is necessary)\n\t- Solar Array: (maintenance?,  +power)\n\nDOCKS\n\t- Civilian (+income, +scrap, -alloy) \n\t\t\t\t-> Ships dock on a timer. By default pay for parking. Additionally, can pay extra if can buy fuel, and pay extra if can buy alloy\n\t- Cargo (trade credits to mats or mats to credits)\n\t- Industrial (+ore)\n\nPRODUCTION:\n\t- Lab: (+research)?\n\t- Refinery: (-ore, +alloy)\n\nHABITABILITY:\n\t- Living Quarters (crew lives in rings, civilians live in quarters) (+income, -food)\n\t- Food Farm (+food)\n\nDEFENSE:\n\t- Turrets\n\t- Fighter Hangar",
 			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
 			"steps": []
 		},

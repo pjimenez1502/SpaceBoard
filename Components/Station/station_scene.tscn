@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://545ql27c72ib" path="res://Components/Station/Menu/debug_resources.tscn" id="7_qpcng"]
 [ext_resource type="Script" uid="uid://c3epqggy05kmc" path="res://Components/Station/Menu/trade_menu.gd" id="8_t36wb"]
 [ext_resource type="Texture2D" uid="uid://dgs3okrq18aro" path="res://UI/BorderSquare.png" id="10_2v0j0"]
-[ext_resource type="Texture2D" uid="uid://sy6gd26adlsj" path="res://UI/Button_48x32.png" id="10_60soq"]
+[ext_resource type="PackedScene" uid="uid://yh5aivfxxt58" path="res://Components/Station/Menu/trade_row.tscn" id="10_60soq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_11fnl"]
 flip_faces = true
@@ -132,6 +132,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("8_t36wb")
 
 [node name="Content" type="Control" parent="TradeMenu"]
@@ -190,6 +191,7 @@ theme_override_constants/margin_bottom = 16
 
 [node name="BoxContainer" type="VBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Titles" type="HBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
@@ -198,77 +200,74 @@ layout_mode = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Comodity"
+horizontal_alignment = 1
+
+[node name="Price" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "Price"
+horizontal_alignment = 1
 
 [node name="Stored" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Stored"
+horizontal_alignment = 1
 
 [node name="Buy" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 2
 text = "Buy"
+horizontal_alignment = 1
 
 [node name="Sell" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 2
 text = "Sell"
+horizontal_alignment = 1
 
 [node name="Curr Order" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Ordered"
+text = "Current Order"
+horizontal_alignment = 1
 
-[node name="Iron" type="HBoxContainer" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(120, 0)
+[node name="Iron" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-text = "Iron"
 
-[node name="Stored" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(120, 0)
+[node name="Titanium" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-text = "100"
+resource = 1
 
-[node name="Buy Input" type="SpinBox" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(90, 0)
+[node name="Magnesium" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-max_value = 999.0
-rounded = true
+resource = 2
 
-[node name="Buy Button" type="TextureButton" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(48, 32)
+[node name="Ice" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-texture_normal = ExtResource("10_60soq")
+resource = 3
 
-[node name="VSeparator" type="VSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+[node name="HSeparator2" type="HSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 2
 
-[node name="Sell Input" type="SpinBox" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(90, 0)
+[node name="Alloy" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-max_value = 999.0
+resource = 4
 
-[node name="Sell Button" type="TextureButton" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(48, 32)
+[node name="Munition" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-texture_normal = ExtResource("10_60soq")
+resource = 5
 
-[node name="VSeparator2" type="VSeparator" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
+[node name="Fuel" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-theme_override_constants/separation = 2
+resource = 6
 
-[node name="Label" type="Label" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer/Iron"]
-custom_minimum_size = Vector2(120, 0)
+[node name="Reactor Fuel" parent="TradeMenu/Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("10_60soq")]
 layout_mode = 2
-text = "0"
+resource = 7
 
 [node name="OpenButton" type="TextureButton" parent="TradeMenu"]
 custom_minimum_size = Vector2(48, 48)

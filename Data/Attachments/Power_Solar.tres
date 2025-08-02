@@ -8,8 +8,9 @@ script = ExtResource("2_xav0i")
 id = "power_solar"
 name = "Solar Array"
 cost = {
-"credits": 60
+"credits": 100
 }
 power_draw = 0
 scene = ExtResource("1_6ova4")
+description = ""
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

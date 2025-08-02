@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dckft0s31tfki"]
+[gd_scene load_steps=5 format=3 uid="uid://b6v7sxkfkoee2"]
 
-[ext_resource type="Script" uid="uid://c4dolxehjqnmq" path="res://Components/Station/Station Components/Attachments/hangar_civ.gd" id="1_3ot3c"]
+[ext_resource type="Script" uid="uid://dwqp1351jlnh4" path="res://Components/Station/Station Components/Attachments/dock_cargo.gd" id="1_o4x4u"]
+[ext_resource type="PackedScene" uid="uid://dgqdk6j3tu5bm" path="res://Components/Ship/Ship_Cargo_S.tscn" id="2_umkoo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_62t6p"]
-size = Vector3(0.2, 0.15, 0.32)
+size = Vector3(0.2, 0.25, 0.27)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7cqsw"]
 size = Vector3(0.3, 0.2, 0.32)
 
-[node name="Hangar_Civ" type="Node3D"]
-script = ExtResource("1_3ot3c")
-ship_frequency = 1
+[node name="Hangar_Cargo" type="Node3D"]
+script = ExtResource("1_o4x4u")
+ship_objects = Array[PackedScene]([ExtResource("2_umkoo")])
 
 [node name="Mesh" type="Node3D" parent="."]
 
