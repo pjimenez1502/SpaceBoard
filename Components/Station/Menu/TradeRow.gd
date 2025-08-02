@@ -22,7 +22,7 @@ func update_order() -> void:
 	current_order.text = "%d/%d" % ResourceDirector.get_current_order(resource_id)
 
 func update_stored(resources: Dictionary) -> void:
-	stored.text = "%d" % resources[resource_id]
+	stored.text = "%d T" % resources[resource_id]
 
 func order_buy() -> void:
 	ResourceDirector.add_buy_order(resource_id, buy_input.value)

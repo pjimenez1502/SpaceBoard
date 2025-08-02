@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkctibhnt8qyf"]
+[gd_scene load_steps=6 format=3 uid="uid://dkctibhnt8qyf"]
 
 [ext_resource type="Script" uid="uid://b20wlmjrqkwma" path="res://Components/Station/Station Components/AddButton/slot_button.gd" id="1_6egk2"]
 [ext_resource type="Texture2D" uid="uid://cfk25eh7odb5b" path="res://UI/Add_button.png" id="2_u61yg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e0vqk"]
 radius = 0.147592
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6egk2"]
+transparency = 1
+depth_draw_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 0.286275)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6egk2"]
+material = SubResource("StandardMaterial3D_6egk2")
+radius = 0.125
+height = 0.25
 
 [node name="SlotButton" type="Node3D"]
 script = ExtResource("1_6egk2")
@@ -15,9 +26,15 @@ script = ExtResource("1_6egk2")
 shape = SubResource("SphereShape3D_e0vqk")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
+layers = 2
 pixel_size = 0.015
 billboard = 1
 texture_filter = 0
+render_priority = 10
 texture = ExtResource("2_u61yg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_6egk2")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

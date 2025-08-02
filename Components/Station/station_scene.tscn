@@ -98,7 +98,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 far = 40000.0
 
 [node name="EdgeShader Plane" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot/Camera3D"]
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_11fnl")
 surface_material_override/0 = SubResource("ShaderMaterial_b54n2")
@@ -109,6 +108,7 @@ far = 40000.0
 
 [node name="PlanetShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -696.262, -895.603, -656.448)
+visible = false
 mesh = SubResource("BoxMesh_qpcng")
 
 [node name="Planet" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene"]
