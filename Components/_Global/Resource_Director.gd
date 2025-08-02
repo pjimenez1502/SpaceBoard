@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func set_starting_resource_values() -> void:
 	resources = {
-		"credits": 1000,
+		"credits": 8000,
 		
 		"iron": 0,
 		"titanium": 0,

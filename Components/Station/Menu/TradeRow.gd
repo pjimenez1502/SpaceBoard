@@ -15,11 +15,14 @@ func _ready() -> void:
 	resource_id = ResourceDirector.MATERIAL.keys()[resource]
 	title.text = resource_id.capitalize()
 	price.text = "%dC" % ResourceDirector.trade_price_table[resource_id]
-	ResourceDirector.TRADE_UPDATE.connect(update)
+	ResourceDirector.TRADE_UPDATE.connect(update_order)
+	ResourceDirector.RESOURCES_UPDATE.connect(update_stored)
 
-func update() -> void:
-	stored.text = "%d" % ResourceDirector.resources[resource_id]
+func update_order() -> void:
 	current_order.text = "%d/%d" % ResourceDirector.get_current_order(resource_id)
+
+func update_stored(resources: Dictionary) -> void:
+	stored.text = "%d" % resources[resource_id]
 
 func order_buy() -> void:
 	ResourceDirector.add_buy_order(resource_id, buy_input.value)

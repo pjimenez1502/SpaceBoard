@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func update_debug_resources(resources: Dictionary) -> void:
 	if resources.has("credits"):
-		credits.text = "Credits: %d" % resources["credits"]
+		credits.text = "Credits: %s" % Util.format_number(resources["credits"])
 	if resources.has("scrap"):
 		scrap.text = "Scrap: %d" % resources["scrap"]
 	

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Util="*res://Util/util.gd"
 GameDirector="*res://Components/_Global/Game_Director.gd"
 ResourceDirector="*res://Components/_Global/Resource_Director.gd"
 SceneDirector="*res://Components/_Global/Scene_Director.gd"

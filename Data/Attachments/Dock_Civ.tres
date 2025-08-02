@@ -8,8 +8,9 @@ script = ExtResource("2_sppbt")
 id = "dock_civilian"
 name = "Civilian Dock"
 cost = {
-"credits": 400
+"credits": 2000
 }
 power_draw = 5
 scene = ExtResource("1_lv7dk")
+description = ""
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

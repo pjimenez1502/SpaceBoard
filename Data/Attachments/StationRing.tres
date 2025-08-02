@@ -8,7 +8,7 @@ script = ExtResource("1_kj0ak")
 id = "station_ring"
 name = "Station Ring"
 cost = {
-"credits": 1000
+"credits": 10000
 }
 power_draw = 0
 scene = ExtResource("1_jyvit")

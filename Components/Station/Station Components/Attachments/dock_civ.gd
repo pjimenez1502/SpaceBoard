@@ -17,7 +17,7 @@ func pay_docking_fee() -> void:
 	ResourceDirector.update_value("credits", 3)
 
 func pay_fuel_fee() -> void:
-	ResourceDirector.resource_sell("fuel", randi_range(0,8), 1.1)
+	ResourceDirector.resource_sell("fuel", randi_range(0,2), 1.1)
 
 func pay_repair_fee() -> void:
-	ResourceDirector.resource_sell("alloy", randi_range(0,4), 1.1)
+	ResourceDirector.resource_sell("alloy", randi_range(0,1), 1.1)

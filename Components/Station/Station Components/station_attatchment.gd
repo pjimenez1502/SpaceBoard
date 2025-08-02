@@ -10,6 +10,7 @@ var attachment_id: int
 var attachment_slot: int
 var attatchment_level: int = 1
 
+var power_draw: int
 var powered: bool
 
 func set_level(level:int) -> void:
@@ -27,6 +28,7 @@ func set_level(level:int) -> void:
 
 func on_build() -> void:
 	ResourceDirector.power_check()
+	ResourceDirector.update_power_use(attachment_id, power_draw)
 
 func on_update() -> void:
 	pass
