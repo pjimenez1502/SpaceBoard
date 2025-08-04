@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttachmentData" load_steps=3 format=3 uid="uid://bwvsfxld20ubs"]
+
+[ext_resource type="PackedScene" uid="uid://b732dd6m8thjc" path="res://Components/Station/Station Components/Attachments/dock_industrial.tscn" id="1_blp7w"]
+[ext_resource type="Script" uid="uid://bb1nlfr7qcrvs" path="res://Data/Attachments/attachment_data.gd" id="2_udq4n"]
+
+[resource]
+script = ExtResource("2_udq4n")
+id = "dock_industrial"
+name = "Industrial Dock"
+cost = {
+"credits": 3000
+}
+power_draw = 10
+scene = ExtResource("1_blp7w")
+description = ""
+metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

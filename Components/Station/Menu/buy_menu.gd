@@ -6,6 +6,7 @@ var attachment_dictionary: Dictionary = {
 	"power_solar": preload("res://Data/Attachments/Power_Solar.tres"),
 	"dock_civilian": preload("res://Data/Attachments/Dock_Civ.tres"),
 	"dock_cargo": preload("res://Data/Attachments/Dock_Cargo.tres"),
+	"dock_industrial": preload("res://Data/Attachments/Dock_Industrial.tres"),
 }
 
 
@@ -24,6 +25,8 @@ func buy_dock_civilian() -> void:
 	select_attachment("dock_civilian")
 func buy_dock_cargo() -> void:
 	select_attachment("dock_cargo")
+func buy_dock_industrial() -> void:
+	select_attachment("dock_industrial")
 
 
 func select_attachment(id: String, cost_multiplier: int = 1) -> void:

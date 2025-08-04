@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6v7sxkfkoee2"]
+[gd_scene load_steps=6 format=3 uid="uid://b732dd6m8thjc"]
 
-[ext_resource type="Script" uid="uid://dwqp1351jlnh4" path="res://Components/Station/Station Components/Attachments/dock_cargo.gd" id="1_o4x4u"]
-[ext_resource type="PackedScene" uid="uid://dgqdk6j3tu5bm" path="res://Components/Ship/Ship_Cargo_S.tscn" id="2_umkoo"]
+[ext_resource type="Script" uid="uid://bc0ygqjpf1gfd" path="res://Components/Station/Station Components/Attachments/dock_industrial.gd" id="1_r3swp"]
+[ext_resource type="PackedScene" uid="uid://1hmapcl6ws37" path="res://Components/Ship/Ship_Miner_S.tscn" id="2_iskdt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umkoo"]
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(1, 0.196078, 0.243137, 1)
+albedo_color = Color(1, 0.627451, 0.239216, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_62t6p"]
 material = SubResource("StandardMaterial3D_umkoo")
-size = Vector3(0.2, 0.25, 0.27)
+size = Vector3(0.35, 0.2, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7cqsw"]
 size = Vector3(0.3, 0.2, 0.32)
 
 [node name="Hangar_Cargo" type="Node3D"]
-script = ExtResource("1_o4x4u")
-ship_objects = Array[PackedScene]([ExtResource("2_umkoo")])
+script = ExtResource("1_r3swp")
+ship_objects = Array[PackedScene]([ExtResource("2_iskdt")])
 
 [node name="Mesh" type="Node3D" parent="."]
 
@@ -26,7 +26,7 @@ ship_objects = Array[PackedScene]([ExtResource("2_umkoo")])
 [node name="lvl_1" type="Node3D" parent="Mesh/Levels"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/Levels/lvl_1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.459928, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538301, 0, 0)
 mesh = SubResource("BoxMesh_62t6p")
 
 [node name="lvl_2" type="Node3D" parent="Mesh/Levels"]

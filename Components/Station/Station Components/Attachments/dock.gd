@@ -38,19 +38,21 @@ func on_ship_release(tier: int) -> void:
 
 
 func spawn_incoming_ship() -> void:
+	ship_count += 1
+	
 	var ship: Ship = select_ship_model()
 	ship_space.add_child(ship)
 	ship.navigate_in(get_random_point(), entry_target.global_position, landing_target.global_position)
 	ship.SHIP_ARRIVED.connect(on_ship_dock)
-	ship_count += 1
 
 func spawn_outgoing_ship() -> void:
+	ship_count -= 1
+	
 	var ship: Ship = select_ship_model()
 	ship_space.add_child(ship)
 	ship.navigate_out(landing_target.global_position, entry_target.global_position, get_random_point())
 	ship.SHIP_LEFT.connect(on_ship_release)
-	ship_count -= 1
-	
+
 func select_ship_model() -> Ship:
 	return ship_objects.pick_random().instantiate()
 
