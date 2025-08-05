@@ -3,9 +3,9 @@ extends StationAttachment
 @export var power_gen: int = 10
 
 func on_build() -> void:
-	super.on_build()
 	powered = true
 	generating_power(powered)
+	super.on_build()
 
 func generating_power(value: bool) -> void:
 	powered = value

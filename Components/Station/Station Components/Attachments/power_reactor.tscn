@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqt01u5qahpv"]
+[gd_scene load_steps=10 format=3 uid="uid://bqt01u5qahpv"]
 
 [ext_resource type="Script" uid="uid://c08jmfst80hv1" path="res://Components/Station/Station Components/Attachments/power_reactor.gd" id="1_newho"]
 
@@ -19,6 +19,24 @@ height = 0.375
 [sub_resource type="SphereMesh" id="SphereMesh_8hcu0"]
 radius = 0.25
 height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_newho"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u6t2s"]
+material = SubResource("StandardMaterial3D_newho")
+radius = 0.01
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqnqs"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_syu8a"]
+material = SubResource("StandardMaterial3D_wqnqs")
+radius = 0.005
+height = 0.01
 
 [node name="Power_Reactor" type="Node3D"]
 script = ExtResource("1_newho")
@@ -61,3 +79,15 @@ one_shot = true
 unique_name_in_owner = true
 wait_time = 200.0
 one_shot = true
+
+[node name="PowerIndicator" type="Node3D" parent="."]
+
+[node name="Power_ON" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.566629, 0.125983, 0)
+mesh = SubResource("SphereMesh_u6t2s")
+
+[node name="Power_OFF" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56704, 0.126393, 0)
+mesh = SubResource("SphereMesh_syu8a")

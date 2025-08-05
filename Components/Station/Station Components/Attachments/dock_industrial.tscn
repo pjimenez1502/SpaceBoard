@@ -1,7 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://b732dd6m8thjc"]
+[gd_scene load_steps=10 format=3 uid="uid://b732dd6m8thjc"]
 
 [ext_resource type="Script" uid="uid://bc0ygqjpf1gfd" path="res://Components/Station/Station Components/Attachments/dock_industrial.gd" id="1_r3swp"]
 [ext_resource type="PackedScene" uid="uid://1hmapcl6ws37" path="res://Components/Ship/Ship_Miner_S.tscn" id="2_iskdt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iskdt"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_iskdt"]
+material = SubResource("StandardMaterial3D_iskdt")
+radius = 0.01
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5hpg"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_g5hpg"]
+material = SubResource("StandardMaterial3D_g5hpg")
+radius = 0.005
+height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umkoo"]
 diffuse_mode = 3
@@ -18,6 +36,18 @@ size = Vector3(0.3, 0.2, 0.32)
 [node name="Hangar_Cargo" type="Node3D"]
 script = ExtResource("1_r3swp")
 ship_objects = Array[PackedScene]([ExtResource("2_iskdt")])
+
+[node name="PowerIndicator" type="Node3D" parent="."]
+
+[node name="Power_ON" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.442589, 0.10359, 0)
+mesh = SubResource("SphereMesh_iskdt")
+
+[node name="Power_OFF" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443, 0.104, 0)
+mesh = SubResource("SphereMesh_g5hpg")
 
 [node name="Mesh" type="Node3D" parent="."]
 

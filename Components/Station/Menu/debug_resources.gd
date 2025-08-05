@@ -20,11 +20,10 @@ func update_debug_resources(resources: Dictionary) -> void:
 	
 	#print(resources)
 
-func sum(accum: int, number: int) -> int:
-	return accum + number
+
 func update_power(power_data: Dictionary) -> void:
-	var power_generated: int = power_data["sources"].values().reduce(sum, 0)
-	var power_used: int = power_data["uses"].values().reduce(sum, 0)
+	var power_generated: int = power_data["sources"].values().reduce(Util.sum, 0)
+	var power_used: int = power_data["uses"].values().reduce(Util.sum, 0)
 	
 	power.text = "Power: %d/%d" % [power_used, power_generated]
 

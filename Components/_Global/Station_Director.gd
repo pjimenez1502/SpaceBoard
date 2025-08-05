@@ -41,12 +41,13 @@ func build_attachment(ring: int, slot: int) -> void:
 	new_attachment.rotation = Vector3.UP * deg_to_rad(90 * slot)
 	new_attachment.attachment_id = last_attachment_id
 	new_attachment.power_draw = selected_attachment_data.power_draw
-	last_attachment_id += 1
 	
+	st_attatchments.append(new_attachment)
 	ResourceDirector.purchase_cost(selected_attachment_data.cost)
 	
 	new_attachment.on_build()
 	show_slot_buttons(false)
+	last_attachment_id += 1
 
 func show_slot_buttons(value: bool) -> void:
 	for ring: StationRing in st_rings:

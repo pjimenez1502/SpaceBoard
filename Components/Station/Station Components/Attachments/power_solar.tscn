@@ -1,6 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bguvr4u841qtj"]
+[gd_scene load_steps=8 format=3 uid="uid://bguvr4u841qtj"]
 
 [ext_resource type="Script" uid="uid://bdnnhjrcop2ke" path="res://Components/Station/Station Components/Attachments/power_solar.gd" id="1_yodja"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yodja"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_wut5l"]
+material = SubResource("StandardMaterial3D_yodja")
+radius = 0.005
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhg4w"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u5wdr"]
+material = SubResource("StandardMaterial3D_xhg4w")
+radius = 0.01
+height = 0.02
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yodja"]
 top_radius = 0.02
@@ -13,6 +31,18 @@ size = Vector2(0.4, 0.2)
 
 [node name="Power_Solar" type="Node3D"]
 script = ExtResource("1_yodja")
+
+[node name="PowerIndicator" type="Node3D" parent="."]
+
+[node name="Power_ON" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.392985, 0.023021, 0)
+mesh = SubResource("SphereMesh_wut5l")
+
+[node name="Power_OFF" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393396, 0.023431, 0)
+mesh = SubResource("SphereMesh_u5wdr")
 
 [node name="Mesh" type="Node3D" parent="."]
 

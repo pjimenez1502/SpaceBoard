@@ -6,8 +6,8 @@ extends StationAttachment
 
 
 func on_build() -> void:
-	super.on_build()
 	check_refuel()
+	super.on_build()
 
 func on_shutdown() -> void:
 	generating_power(false)

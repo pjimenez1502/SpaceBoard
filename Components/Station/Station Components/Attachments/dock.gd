@@ -17,7 +17,6 @@ var ship_count: int = 0
 func on_build() -> void:
 	super.on_build()
 	start_work_timer()
-	powered = true ##CHEATING POWER ON
 
 func on_work() -> void:
 	check_spawn_condition()

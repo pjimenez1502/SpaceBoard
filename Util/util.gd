@@ -23,3 +23,6 @@ func format_number(n: int) -> String:
 	else:
 		# ran otherwise
 		return str(n)
+
+func sum(accum: int, number: int) -> int:
+	return accum + number

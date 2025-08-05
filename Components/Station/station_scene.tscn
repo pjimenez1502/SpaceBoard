@@ -94,10 +94,11 @@ script = ExtResource("2_o1uw3")
 script = ExtResource("3_53pab")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 far = 40000.0
 
 [node name="EdgeShader Plane" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Station Scene/CameraPivot/Camera3D"]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_11fnl")
 surface_material_override/0 = SubResource("ShaderMaterial_b54n2")

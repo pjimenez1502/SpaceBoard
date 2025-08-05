@@ -92,11 +92,23 @@ var power_uses: Dictionary
 func update_power_gen(id: int, value: int) -> void:
 	power_sources[id] = value
 	send_power_update()
+	power_check()
 func update_power_use(id: int, value: int) -> void:
 	power_uses[id] = value
 	send_power_update()
+	power_check()
 
 func power_check() -> void:
+	print("START POWER CHECK")
+	var available_power: int = power_sources.values().reduce(Util.sum, 0)
+	var used_power: int = 0
+	for attachment: StationAttachment in StationDirector.st_attatchments:
+		used_power += attachment.power_draw
+		if used_power <= available_power:
+			attachment.set_powered(true)
+		else: 
+			attachment.set_powered(false)
+	
 	## Run through each power user and check if there is enough power remaining
 	## Power as many as posible
 	pass

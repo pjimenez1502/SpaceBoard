@@ -1,7 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dckft0s31tfki"]
+[gd_scene load_steps=10 format=3 uid="uid://dckft0s31tfki"]
 
 [ext_resource type="Script" uid="uid://c4dolxehjqnmq" path="res://Components/Station/Station Components/Attachments/dock_civ.gd" id="1_auwpp"]
 [ext_resource type="PackedScene" uid="uid://dg57o3101dvnk" path="res://Components/Ship/Ship_Civ_S.tscn" id="2_ccggs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb3pq"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_irsxw"]
+material = SubResource("StandardMaterial3D_nb3pq")
+radius = 0.005
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu6aq"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m2ykk"]
+material = SubResource("StandardMaterial3D_eu6aq")
+radius = 0.01
+height = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccggs"]
 diffuse_mode = 3
@@ -19,6 +37,18 @@ size = Vector3(0.3, 0.2, 0.32)
 script = ExtResource("1_auwpp")
 ship_objects = Array[PackedScene]([ExtResource("2_ccggs")])
 ship_stay_time = 25
+
+[node name="PowerIndicator" type="Node3D" parent="."]
+
+[node name="Power_ON" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.442589, 0.0813746, 0)
+mesh = SubResource("SphereMesh_irsxw")
+
+[node name="Power_OFF" type="MeshInstance3D" parent="PowerIndicator"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443, 0.0817846, 0)
+mesh = SubResource("SphereMesh_m2ykk")
 
 [node name="Mesh" type="Node3D" parent="."]
 
