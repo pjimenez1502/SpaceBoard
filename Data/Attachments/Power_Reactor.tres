@@ -12,5 +12,5 @@ cost = {
 }
 power_draw = 0
 scene = ExtResource("1_nnwrk")
-description = ""
+description = "Generates up to [img]res://UI/Icon/Power.png[/img] 60 while fueled up."
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

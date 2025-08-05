@@ -12,5 +12,5 @@ cost = {
 }
 power_draw = 5
 scene = ExtResource("1_lv7dk")
-description = ""
+description = "Provides passive income from docking Ships. If available, Ships might also refuel or purchase alloys."
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

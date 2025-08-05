@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yh5aivfxxt58"]
 
-[ext_resource type="Script" uid="uid://b3bsy5sfpcrlt" path="res://Components/Station/Menu/TradeRow.gd" id="1_515mf"]
+[ext_resource type="Script" uid="uid://b3bsy5sfpcrlt" path="res://Components/Station/Menu/Trade/TradeRow.gd" id="1_515mf"]
 [ext_resource type="Texture2D" uid="uid://sy6gd26adlsj" path="res://UI/Button_48x32.png" id="2_q3gvk"]
 
 [node name="Iron" type="HBoxContainer"]

@@ -8,9 +8,10 @@ script = ExtResource("1_kj0ak")
 id = "station_ring"
 name = "Station Ring"
 cost = {
-"credits": 10000
+"credits": 8000,
+"iron": 100
 }
 power_draw = 0
 scene = ExtResource("1_jyvit")
-description = ""
+description = "Main structural building. Supports up to 4 attachments"
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

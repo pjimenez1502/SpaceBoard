@@ -14,7 +14,7 @@ func on_ship_release(tier: int) -> void:
 
 ## INCOME
 func pay_docking_fee() -> void:
-	ResourceDirector.update_value("credits", 3)
+	ResourceDirector.update_value("credits", 50)
 
 func pay_fuel_fee() -> void:
 	ResourceDirector.resource_sell("fuel", randi_range(0,2), 1.1)

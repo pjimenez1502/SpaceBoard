@@ -12,5 +12,5 @@ cost = {
 }
 power_draw = 0
 scene = ExtResource("1_6ova4")
-description = ""
+description = "Provides [img]res://UI/Icon/Power.png[/img] 10 passively."
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"

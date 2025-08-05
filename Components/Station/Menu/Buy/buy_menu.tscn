@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv3rax1tcrg7b"]
+[gd_scene load_steps=4 format=3 uid="uid://cv3rax1tcrg7b"]
 
-[ext_resource type="Script" uid="uid://c4pbv7w31eigc" path="res://Components/Station/Menu/buy_menu.gd" id="1_dpwoc"]
+[ext_resource type="Script" uid="uid://c4pbv7w31eigc" path="res://Components/Station/Menu/Buy/buy_menu.gd" id="1_dpwoc"]
 [ext_resource type="Texture2D" uid="uid://beo4ycfrjkme4" path="res://UI/ButtonBorder.png" id="2_jxtb0"]
+[ext_resource type="PackedScene" uid="uid://t382crftp7xk" path="res://Components/Station/Menu/Buy/buy_tooltip.tscn" id="3_15m3h"]
 
 [node name="BuyMenu" type="Control"]
 custom_minimum_size = Vector2(200, 0)
@@ -129,9 +130,28 @@ stretch_mode = 0
 [node name="HSeparator5" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Buy Tooltip" parent="." instance=ExtResource("3_15m3h")]
+unique_name_in_owner = true
+offset_left = 944.0
+offset_top = 160.0
+offset_right = 1144.0
+offset_bottom = 460.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="." method="show_tooltip" binds= ["station_ring"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Structural/Ring" to="." method="buy_ring"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="." method="show_tooltip" binds= ["power_reactor"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Reactor" to="." method="buy_power_reactor"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Solar" to="." method="show_tooltip" binds= ["power_solar"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Solar" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Power/Power_Solar" to="." method="buy_power_solar"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Civ" to="." method="show_tooltip" binds= ["dock_civilian"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Civ" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Civ" to="." method="buy_dock_civilian"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Cargo" to="." method="show_tooltip" binds= ["dock_cargo"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Cargo" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Cargo" to="." method="buy_dock_cargo"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Industrial" to="." method="show_tooltip" binds= ["dock_industrial"]]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Industrial" to="." method="hide_tooltip"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BuyGroup Hangar/Dock_Industrial" to="." method="buy_dock_industrial"]

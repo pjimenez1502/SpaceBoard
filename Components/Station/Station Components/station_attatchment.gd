@@ -35,7 +35,6 @@ func on_build() -> void:
 
 func on_work() -> void:
 	pass
-
 func on_update() -> void:
 	pass
 func on_shutdown() -> void:

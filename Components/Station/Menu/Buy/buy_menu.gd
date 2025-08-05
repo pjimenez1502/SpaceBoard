@@ -1,5 +1,7 @@
 extends Control
 
+@onready var buy_tooltip: BuyTooltip = %"Buy Tooltip"
+
 var attachment_dictionary: Dictionary = {
 	"station_ring": preload("res://Data/Attachments/StationRing.tres"),
 	"power_reactor": preload("res://Data/Attachments/Power_Reactor.tres"),
@@ -36,3 +38,10 @@ func select_attachment(id: String, cost_multiplier: int = 1) -> void:
 	if !ResourceDirector.check_cost(attachment_dictionary[id].cost, cost_multiplier):
 		return
 	StationDirector.select_attachment(attachment_dictionary[id])
+
+func show_tooltip(attachment: String) -> void:
+	buy_tooltip.show_tooltip(true)
+	buy_tooltip.populate(attachment_dictionary[attachment])
+
+func hide_tooltip() -> void:
+	buy_tooltip.show_tooltip(false)

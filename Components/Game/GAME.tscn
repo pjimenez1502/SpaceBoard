@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_bbb5n")
 
 [node name="Chromatic Aberration Filter" type="ColorRect" parent="."]
+visible = false
 top_level = true
 material = SubResource("ShaderMaterial_8rqih")
 layout_mode = 1

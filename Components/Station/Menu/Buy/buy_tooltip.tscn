@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://t382crftp7xk"]
+
+[ext_resource type="Texture2D" uid="uid://dgs3okrq18aro" path="res://UI/BorderSquare.png" id="1_e0yj5"]
+[ext_resource type="Script" uid="uid://672rh6s46ah5" path="res://Components/Station/Menu/Buy/buy_tooltip.gd" id="1_y84eu"]
+
+[node name="Buy Tooltip" type="Control"]
+custom_minimum_size = Vector2(200, 160)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 199.0
+offset_bottom = 160.0
+mouse_filter = 2
+script = ExtResource("1_y84eu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e0yj5")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[img]res://UI/Icon/Credits.png[/img]: 100"
+fit_content = true
+
+[node name="Cost" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "C: 1K  Fe: 100  Z: 10"
+
+[node name="Name" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Solar Array"
+
+[node name="Description" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Generates [10 power]"
+autowrap_mode = 2

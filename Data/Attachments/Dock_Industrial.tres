@@ -12,5 +12,5 @@ cost = {
 }
 power_draw = 10
 scene = ExtResource("1_blp7w")
-description = ""
+description = "Enables Industrial Ships to fulfill mining assignments."
 metadata/_custom_type_script = "uid://bb1nlfr7qcrvs"
