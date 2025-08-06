@@ -1,25 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://jl0atb5w6lik"]
+[gd_scene load_steps=5 format=3 uid="uid://jl0atb5w6lik"]
 
 [ext_resource type="Script" uid="uid://c3epqggy05kmc" path="res://Components/Station/Menu/Trade/trade_menu.gd" id="1_2a5oy"]
 [ext_resource type="Texture2D" uid="uid://dgs3okrq18aro" path="res://UI/BorderSquare.png" id="2_108wh"]
 [ext_resource type="Texture2D" uid="uid://bwocfmnxqelpa" path="res://UI/Icon/Credits.png" id="3_108wh"]
 [ext_resource type="PackedScene" uid="uid://yh5aivfxxt58" path="res://Components/Station/Menu/Trade/trade_row.tscn" id="3_w8snc"]
-[ext_resource type="Texture2D" uid="uid://beo4ycfrjkme4" path="res://UI/ButtonBorder.png" id="4_h2gwk"]
 
 [node name="TradeMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_2a5oy")
-
-[node name="Content" type="Control" parent="."]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(800, 500)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -31,21 +19,10 @@ offset_right = 400.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_2a5oy")
 
-[node name="Background" type="ColorRect" parent="Content"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -176.0
-offset_top = -74.0
-offset_right = 176.0
-offset_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.392157)
-
-[node name="Panel" type="NinePatchRect" parent="Content"]
+[node name="Panel" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +35,7 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="Content/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,126 +47,117 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="BoxContainer" type="VBoxContainer" parent="Content/Panel/MarginContainer"]
+[node name="BoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Credit" type="HBoxContainer" parent="Content/Panel/MarginContainer/BoxContainer"]
+[node name="Credit" type="Control" parent="Panel/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(180, 32)
 layout_mode = 2
+size_flags_horizontal = 8
 
-[node name="TextureRect" type="TextureRect" parent="Content/Panel/MarginContainer/BoxContainer/Credit"]
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/BoxContainer/Credit"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
 texture = ExtResource("3_108wh")
 expand_mode = 2
 
-[node name="CreditCount" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Credit"]
+[node name="CreditCount" type="Label" parent="Panel/MarginContainer/BoxContainer/Credit"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 36.0
+offset_top = 4.0
+offset_right = 159.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HSeparator3" type="HSeparator" parent="Content/Panel/MarginContainer/BoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 
-[node name="Titles" type="HBoxContainer" parent="Content/Panel/MarginContainer/BoxContainer"]
+[node name="Titles" type="HBoxContainer" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Comodity" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Comodity" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Comodity"
 horizontal_alignment = 1
 
-[node name="Price" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Price" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "Price"
 horizontal_alignment = 1
 
-[node name="Stored" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Stored" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Stored"
 horizontal_alignment = 1
 
-[node name="Buy" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Buy" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 2
 text = "Buy"
 horizontal_alignment = 1
 
-[node name="Sell" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Sell" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 2
 text = "Sell"
 horizontal_alignment = 1
 
-[node name="Curr Order" type="Label" parent="Content/Panel/MarginContainer/BoxContainer/Titles"]
+[node name="Curr Order" type="Label" parent="Panel/MarginContainer/BoxContainer/Titles"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Current Order"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Content/Panel/MarginContainer/BoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 
-[node name="Iron" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Iron" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 
-[node name="Titanium" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Titanium" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 1
 
-[node name="Magnesium" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Magnesium" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 2
 
-[node name="Ice" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Ice" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 3
 
-[node name="HSeparator2" type="HSeparator" parent="Content/Panel/MarginContainer/BoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 
-[node name="Alloy" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Alloy" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 4
 
-[node name="Munition" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Munition" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 5
 
-[node name="Fuel" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Fuel" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 6
 
-[node name="Reactor Fuel" parent="Content/Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
+[node name="Reactor Fuel" parent="Panel/MarginContainer/BoxContainer" instance=ExtResource("3_w8snc")]
 layout_mode = 2
 alignment = 1
 resource = 7
-
-[node name="OpenButton" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -64.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("4_h2gwk")
-stretch_mode = 0
-
-[connection signal="pressed" from="OpenButton" to="." method="toggle_open"]

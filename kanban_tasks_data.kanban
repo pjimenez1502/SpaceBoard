@@ -28,7 +28,8 @@
 			"tasks": [
 				"340d9d52-9f12-4c70-833e-4e850f6d13a4",
 				"37c2faaa-9458-4f11-ad52-fcd50eceeee6",
-				"a1495bef-c32a-498a-bfad-212124817515"
+				"a1495bef-c32a-498a-bfad-212124817515",
+				"f236d597-193a-4e08-966f-72747c8ecd1c"
 			]
 		},
 		{
@@ -81,7 +82,14 @@
 		{
 			"uuid": "a1495bef-c32a-498a-bfad-212124817515",
 			"title": "TRADING",
-			"description": "\n\nComodity\t|\tStored qnt\t|\tCurr Order\t\t|\tBuy\t\t\t\t\t|\tSell\t\t\t\t\t|\nIron\t\t\t\t|\t100\t\t\t\t|\t-100\t\t\t\t\t| [   10 ]  ( buy )\t| [   10 ]  ( sell )\t|",
+			"description": "\n-- Dock Tab:\n\t- Dock stats, upgrade button\n\t- Available Ship List and hire\n\n\n -- Market Tab:\nComodity\t|\tStored qnt\t|\tCurr Order\t\t|\tBuy\t\t\t\t\t|\tSell\t\t\t\t\t|\nIron\t\t\t\t|\t100\t\t\t\t|\t-100\t\t\t\t\t| [   10 ]  ( buy )\t| [   10 ]  ( sell )\t|\n\n\n\nShips:\n\thire new or manage in crew tab\n\n\t- gain xp doing jobs?. if enough xp, level up using money to increase stats\n\tstats:\n\t\t- capacity (cargo ammount)\n\t\t- speed (delay after leaving)\n\t\t- unloading speed (delay while inside)",
+			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
+			"steps": []
+		},
+		{
+			"uuid": "f236d597-193a-4e08-966f-72747c8ecd1c",
+			"title": "MINING",
+			"description": "\n-- Dock tab:\n\t- Dock stats, upgrade button\n\t- Available Ship List and hire\n\n-- Prospect tab:\n\tSelect prospector, send them on a prospection asignment\n\tOnce finished, show 3? site choices\n\n\n-- Asignment tab:\n\t- Asign ship(s) to prospected site\n\n\n\n\nSite Stats:\n\t- materials\n\t- \t(materials per time)\n\t- \t(quantity before depletion)",
 			"category": "769778fe-cce5-446d-bc80-0a7d78aff753",
 			"steps": []
 		}

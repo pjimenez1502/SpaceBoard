@@ -1,7 +1,6 @@
 extends Control
 class_name TradeMenu
 
-@onready var content: Control = %Content
 @onready var credit_count: Label = %CreditCount
 
 func _ready() -> void:
@@ -13,7 +12,7 @@ func toggle_open() -> void:
 	open_menu(!open)
 
 func open_menu(value: bool) -> void:
-	content.visible = value
+	visible = value
 	open = value
 	update_rows()
 
