@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://yh5aivfxxt58"]
+[gd_scene load_steps=4 format=3 uid="uid://yh5aivfxxt58"]
 
 [ext_resource type="Script" uid="uid://b3bsy5sfpcrlt" path="res://Components/Station/Menu/Trade/TradeRow.gd" id="1_515mf"]
+[ext_resource type="Theme" uid="uid://daecgvcuw1c11" path="res://Theme/main_theme.tres" id="1_qlytq"]
 [ext_resource type="Texture2D" uid="uid://sy6gd26adlsj" path="res://UI/Button_48x32.png" id="2_q3gvk"]
 
 [node name="Iron" type="HBoxContainer"]
+theme = ExtResource("1_qlytq")
 script = ExtResource("1_515mf")
 
 [node name="Title" type="Label" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 text = "Iron"
 horizontal_alignment = 1
 
@@ -17,6 +20,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 text = "0"
 horizontal_alignment = 1
 
@@ -24,6 +28,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 text = "100"
 horizontal_alignment = 1
 
@@ -33,12 +38,14 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme = ExtResource("1_qlytq")
 max_value = 999.0
 rounded = true
 
 [node name="Buy Button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(48, 32)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 texture_normal = ExtResource("2_q3gvk")
 
 [node name="Label" type="Label" parent="Buy Button"]
@@ -54,11 +61,13 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qlytq")
 text = "Buy"
 horizontal_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 theme_override_constants/separation = 2
 
 [node name="Sell Input" type="SpinBox" parent="."]
@@ -67,11 +76,13 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_qlytq")
 max_value = 999.0
 
 [node name="Sell Button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(48, 32)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 texture_normal = ExtResource("2_q3gvk")
 
 [node name="Label" type="Label" parent="Sell Button"]
@@ -87,17 +98,20 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qlytq")
 text = "Sell"
 horizontal_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="."]
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 theme_override_constants/separation = 2
 
 [node name="Current Order" type="Label" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme = ExtResource("1_qlytq")
 text = "0 / 0"
 horizontal_alignment = 1
 

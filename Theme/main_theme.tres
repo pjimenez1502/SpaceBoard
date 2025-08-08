@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://daecgvcuw1c11"]
+
+[ext_resource type="FontFile" uid="uid://bn7ao8hgr4v83" path="res://Theme/Font/m5x7.ttf" id="1_cdgx0"]
+[ext_resource type="Texture2D" uid="uid://dgs3okrq18aro" path="res://UI/BorderSquare.png" id="1_qrgx4"]
+[ext_resource type="Texture2D" uid="uid://dbelktnfcrul5" path="res://UI/BorderSquare_flatBottom.png" id="3_o8k82"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mu8p6"]
+texture = ExtResource("1_qrgx4")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdgx0"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+texture = ExtResource("3_o8k82")
+texture_margin_left = 16.0
+texture_margin_top = 4.0
+texture_margin_right = 16.0
+texture_margin_bottom = 4.0
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_cdgx0")
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16
+Panel/styles/panel = SubResource("StyleBoxTexture_mu8p6")
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_cdgx0")
+TabBar/font_sizes/font_size = 32
+TabBar/fonts/font = ExtResource("1_cdgx0")
+TabBar/styles/tab_hovered = SubResource("StyleBoxTexture_cdgx0")
+TabBar/styles/tab_selected = SubResource("StyleBoxTexture_cdgx0")
+TabBar/styles/tab_unselected = SubResource("StyleBoxTexture_cdgx0")

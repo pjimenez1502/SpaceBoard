@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://545ql27c72ib"]
+[gd_scene load_steps=3 format=3 uid="uid://545ql27c72ib"]
 
+[ext_resource type="Theme" uid="uid://daecgvcuw1c11" path="res://Theme/main_theme.tres" id="1_b47gk"]
 [ext_resource type="Script" uid="uid://c1fm12tdgiak3" path="res://Components/Station/Menu/debug_resources.gd" id="1_uekme"]
 
 [node name="DebugResources" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 offset_left = -133.0
 offset_bottom = 139.0
 grow_horizontal = 0
+theme = ExtResource("1_b47gk")
 script = ExtResource("1_uekme")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -20,24 +22,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Speed" type="Label" parent="VBoxContainer"]
+[node name="Speed" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
+bbcode_enabled = true
 text = "Speed: 1X"
+fit_content = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Credits" type="Label" parent="VBoxContainer"]
+[node name="Credits" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
+bbcode_enabled = true
 text = "Credits: 000"
+fit_content = true
 
-[node name="Scrap" type="Label" parent="VBoxContainer"]
+[node name="Power" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-text = "Scrap: 000"
+bbcode_enabled = true
+text = "[img]res://UI/Icon/Power.png[/img] 00/00"
+fit_content = true
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
-
-[node name="Power" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Power: 00/00"

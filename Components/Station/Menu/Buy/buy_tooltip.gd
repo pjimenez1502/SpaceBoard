@@ -26,10 +26,10 @@ func populate_cost(attachment_data: AttachmentData) -> String:
 	for resource: String in attachment_data.cost:
 		match resource:
 			"credits":
-				cost_text += "[img]res://UI/Icon/Credits.png[/img]: %s  " % Util.format_number(attachment_data.cost[resource])
+				cost_text += "[img]res://UI/Icon/Credits.png[/img] %s  " % Util.format_number(attachment_data.cost[resource])
 			"iron":
-				cost_text += "[img]res://UI/Icon/Iron.png[/img]: %s  " % Util.format_number(attachment_data.cost[resource])
+				cost_text += "[img]res://UI/Icon/Iron.png[/img] %s  " % Util.format_number(attachment_data.cost[resource])
 	
 	if attachment_data.power_draw != 0:
-		cost_text += "[img]res://UI/Icon/Power.png[/img]: %d" % attachment_data.power_draw
+		cost_text += "[img]res://UI/Icon/Power.png[/img] %d" % attachment_data.power_draw
 	return cost_text

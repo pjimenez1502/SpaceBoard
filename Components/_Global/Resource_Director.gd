@@ -83,6 +83,8 @@ func refund_last() -> void:
 	for resource: String in last_purchase:
 		update_value(resource, last_purchase[resource])
 
+func send_resource_update() -> void:
+	RESOURCES_UPDATE.emit(resources)
 
 
 ## POWER =======================================================================================================================================
@@ -108,13 +110,7 @@ func power_check() -> void:
 			attachment.set_powered(true)
 		else: 
 			attachment.set_powered(false)
-	
-	## Run through each power user and check if there is enough power remaining
-	## Power as many as posible
-	pass
 
-func send_resource_update() -> void:
-	RESOURCES_UPDATE.emit(resources)
 func send_power_update() -> void:
 	POWER_UPDATE.emit({"sources": power_sources, "uses": power_uses})
 
